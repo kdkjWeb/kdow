@@ -8,7 +8,7 @@ Toast.install = (Vue, options) =>{
     }
     
 
-    Vue.prototype.$toast = (options) => {
+    Vue.prototype.$toast = (options={}) => {
         if(document.getElementsByClassName('toast').length){
             // 如果toast还在，则不再执行
             return;

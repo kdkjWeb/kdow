@@ -3,6 +3,16 @@
 		<span v-text="msg"></span>
 		<div>
 			<button class="testCss" @click="printSomething">输出点啥</button>
+<transition
+	v-on:before-enter="beforeEnter"
+	v-on:enter="enter"
+	@leave="leave"
+	v-bind:css="false"
+	>
+	<p v-if="show">
+		Demo
+	</p>
+</transition>
 		</div>
 		<div>
 			<h2>测试kdowForm</h2>

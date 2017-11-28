@@ -169,8 +169,6 @@ export default {
 		}
 	},
 	mounted() {
-		if(!this.$store.state.userId) 
-			return
 		this.searchAnnouncementList(this.announcementManage.searchModel)
 	}
 }

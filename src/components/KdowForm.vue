@@ -49,25 +49,18 @@
 	export default {
 		data(){
 			return {
-				// model: this.objects,
+				model: this.objects,
 				currentPage: 1
 			}
 		},
-		computed:{
-			model: {
-				get() {
-					return this.objects
+		watch: {
+			'model':{
+				deep: true,
+				handler(val){
+					this.$emit('update:model', this.model)
 				}
-			}
+			},
 		},
-		// watch: {
-		// 	'model':{
-		// 		deep: true,
-		// 		handler(val){
-		// 			this.$emit('update:model', this.model)
-		// 		}
-		// 	},
-		// },
 		props: {
 			definition:{
 				type: Array,

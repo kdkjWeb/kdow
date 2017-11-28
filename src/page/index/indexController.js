@@ -112,6 +112,17 @@ export default{
 				}
 			}
 			this.$refs.main_content.style.marginTop =  - this.clientHeight*index + 'px';
+			
+			if(index == 2){
+				this.isActive=true
+			}else{
+				this.isActive=false
+			}
+			if(index == 3){
+				this.isActiveTwo=true
+			}else{
+				this.isActiveTwo=false
+			}
 		}
 	},
 	mounted() {

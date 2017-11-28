@@ -12,13 +12,11 @@ export default {
 					noIndex: false,//控制表格的序号显示
 					title: '后台审核列表',//表格标题
 				},
-				definition:[
-				// {
-				// 	id: "id",
-				// 	name: "编号",
-				// 	type: "string",
-				// },
-				{
+				definition:[{
+					id: "id",
+					name: "编号",
+					type: "string",
+				},{
 					id: "cuser",
 					name: "创建人",
 					type: "string",
@@ -128,9 +126,10 @@ export default {
 	},
 	methods:{
 		/**
-		 * 查询后台审核列表
+		 * 查询公告列表
 		 */
 		searchBackStageAuditList(searchModel) {
+			console.log(searchModel)
 			this.$store.commit('process')
 			this.$axios.get('verify/select', {
 				params: searchModel
@@ -138,7 +137,7 @@ export default {
 			.then((res)=>{
 				this.$store.commit('done')
 				if(res.data.code === 0){
-					this.backStageAudit.objects = res.data.data
+					this.backStageAudit.objects = res.data.data.list
 					this.backStageAudit.searchModel.total = res.data.data.total
 				}else{
 					this.$toast(res.data.msg)

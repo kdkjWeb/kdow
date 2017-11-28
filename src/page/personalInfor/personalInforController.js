@@ -35,7 +35,7 @@ export default {
 						return phoneReg.test(model) || "请输入正确的手机号"
 					}
 				},{
-					id: "file",
+					id: "userHeader",
 					name: "用户头像",
 					type: "file"
 				},{
@@ -49,28 +49,19 @@ export default {
 					type: "string",
 					disabled: true
 				}],
-				model:{
-
-				},
+				model:{},
 				options:{
 					submit:{
 						enable: true,
 						action:(model)=>{
 							console.log(model)
-							this.$store.commit('process')
 							
 							this.$axios.post('user/update', model)
 							.then((res)=>{
-								this.$store.commit('done')
-								if(res.data.code === 0){
-									this.$alert("修改成功")
-								}else{
-									this.$toast("网络错误请刷新后重试")
-								}
+								console.log(res)
 							})
 							.catch((err)=>{
-								this.$store.commit('done')
-								this.$toast("网络错误请刷新后重试")
+								console.log(err)
 							})
 						}
 					}
@@ -81,25 +72,21 @@ export default {
 	methods:{
 		getPersonalInfor() {
 			this.$store.commit('process')
-			return new Promise((resolve, reject)=>{
-				this.$axios.get('user/getUser')
-				.then(res=>{
-					this.$store.commit('done')
-					resolve(res.data.data)
-				})
-				.catch((err)=>{
-					this.$store.commit('done')
-					this.$toast("请求超时了请检查网络")
-					reject(err)
-				})
+			this.$axios.get('user/getUser')
+			.then((res)=>{
+				this.$store.commit('done')
+				console.log(res);
+				if(res.data.code === 0){
+
+				}
+			})
+			.catch((err)=>{
+				this.$store.commit('done')
+				this.$toast("请求超时了请检查网络")
 			})
 		}
 	},
-	async created() {
-		const response = await this.getPersonalInfor()
-		if(typeof(response.birthday) == 'number'){
-			response.birthday = (new Date(response.birthday)).format('yyyy-MM-dd')
-		}
-		this.$set(this.personalInfor, 'model', response)
+	mounted() {
+		this.getPersonalInfor();
 	}
 }

@@ -222,8 +222,6 @@ export default {
 		}
 	},
 	mounted() {
-		if(!this.$store.state.userId) 
-			return
 		this.searchCarsoulManageList()
 	}
 }

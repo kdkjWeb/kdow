@@ -1,8 +1,1 @@
-<template>
-	<div>
-		
-	</div>
-</template>
-<script type="text/javascript">
-	export default require('./uploadSoftwareController')
-</script>
+<template></template>

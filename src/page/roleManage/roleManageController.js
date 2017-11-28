@@ -114,41 +114,36 @@ export default {
 						},
 						action: (data)=>{
 							console.log(data.sn)
-							if(data.sn){
-								let snArr = data.sn.split(','),
-								    competences = ""
-								for(let i = 0 ; i <  snArr.length ; i++){
-								    this.$store.commit("process")
-						    		this.$axios.get('resource/selectByPrimaryKey', {
-										params: {
-											id: snArr[i]
-										}
-									})
-									.then(res=>{
-										if(res.data.code === 0){
-											if(!i){
-												competences += res.data.data.name
-											}else{
-												competences += "," + res.data.data.name
-											}
-											if(i == snArr.length - 1){
-												this.$store.commit("done")
-												console.log(competences)
-												this.distributeRoleDialog.currentCompetences = competences
-											}
+							let snArr = data.sn.split(','),
+							    competences = ""
+							for(let i = 0 ; i <  snArr.length ; i++){
+							    this.$store.commit("process")
+					    		this.$axios.get('resource/selectByPrimaryKey', {
+									params: {
+										id: snArr[i]
+									}
+								})
+								.then(res=>{
+									if(res.data.code === 0){
+										if(!i){
+											competences += res.data.data.name
 										}else{
-											this.$toast("网络异常请重新尝试")
+											competences += "," + res.data.data.name
 										}
-									})
-									.catch(err=>{
-										this.$store.commit("done")
+										if(i == snArr.length - 1){
+											this.$store.commit("done")
+											console.log(competences)
+											this.distributeRoleDialog.currentCompetences = competences
+										}
+									}else{
 										this.$toast("网络异常请重新尝试")
-									})
-								}
-							}else{
-								this.distributeRoleDialog.currentCompetences = "暂无权限"
+									}
+								})
+								.catch(err=>{
+									this.$store.commit("done")
+									this.$toast("网络异常请重新尝试")
+								})
 							}
-							
 							
 							this.distributeRoleDialog.show = true
 							this.distributeRoleDialog.distributeRoleForm.model = data
@@ -259,8 +254,6 @@ export default {
 
 	},
 	mounted() {
-		if(!this.$store.state.userId) 
-			return
 		this.searchRoleList(this.roleManage.searchModel)
 	}
 }
