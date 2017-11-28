@@ -4,17 +4,17 @@
 			<kdow-header/>
 			<div style="float:clear;"></div>
 		</div>
-		<div class="news_banner">
-			<div class="container-fluid noPadding">
-				<div class="row">
+		<transition class="news_banner">
+			<div class="container-fluid noPadding"> 
+				<div class="">
 					<div class="col-md-12 col-sm-12 col-xs-12 noPadding">
 						<img src="../../assets/news_banner.png"
 						     width="100%" alt=""/>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="news_main">
+		</transition>
+		<div class="news_main" ref="news_main">
 			<div class="container noPadding">
 				<div class="row">
 					<div class="col-md-12 col-sm-12 col-xs-12 noPadding">
@@ -24,17 +24,18 @@
 						</div>
 
 						<!-- 内容div -->
-						<div v-for="(news, index) in newsMain"
+						<div v-for="(news, index,) in newsMain"
 						     style="position: relative"
 						     :style="{
 						     	padding: index < 2 && clientWidth >= 992?'0 35px': '',
 						     	margin: clientWidth >= 992? (index < 2? '0 0 45px 0':'45px 0'): '',
 						     }"
 						     class="col-sm-12 col-xs-12"
-						     :class="{
+						     :class="[{
 						     	'col-md-6':index < 2,
-						     	'col-md-12': index >1 
-						     }">
+						     	'col-md-12': index >1
+						     }, 'contentList' + index,{'contentList':(index < 2 ?leftRight1:(index==2?leftRight2:leftRight3))}]"
+						     >
 
 						    <!-- 图片div -->
 							<div :style="{
@@ -139,9 +140,33 @@
     }
 
     .news_main{
+    	width:100%;
     	background-color: #fff;
+    	margin-top:500px;
+    	overflow-x: hidden;
     }
-
+    .contentList0,.contentList3 {
+    	left:-200px;
+    	opacity:0;
+    	-webkit-transition:all .5s linear .5s;
+    	-o-transition:all .5s linear.5s;
+    	-ms-transition:all .5s linear .5s;
+    	-moz-transition:all .5s linear .5s;
+        tranition:all .5s linear .5s;
+    }
+    .contentList1,.contentList2 {
+    	left:200px;
+    	opacity:0;
+    	-webkit-transition:all .5s linear .5s;
+    	-o-transition:all .5s linear .5s;
+    	-ms-transition:all .5s linear .5s;
+    	-moz-transition:all .5s linear .5s;
+        tranition:all .5s linear .5s;
+    }
+    .contentList {
+    	left:0px;
+    	opacity:1;
+    }
     .news_main_img{
     	overflow: hidden;
     }
