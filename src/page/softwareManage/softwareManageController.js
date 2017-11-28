@@ -178,8 +178,6 @@ export default {
 		}
 	},
 	mounted() {
-		if(!this.$store.state.userId) 
-			return
 		this.searchSoftwareList(this.softwareManage.searchModel)
 	}
 }

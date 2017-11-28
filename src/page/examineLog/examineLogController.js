@@ -39,10 +39,26 @@ export default {
 				options:{
 					detail:{
 						enable: true,
-						name: "详情"
+						name: "详情",
 					},
 					search: {
-						enable: true
+						enable: true,
+						// action: (model)=>{
+						// 	this.$store.commit("process")
+						// 	return new Promise((resolve, reject)=>{
+						// 		this.$axios.get('log/selectSolrLog', {
+						// 			params: model
+						// 		})
+						// 		.then((res)=>{
+						// 			this.$store.commit('done')
+						// 			resolve(res.data)
+						// 		})
+						// 		.catch((err)=>{
+						// 			this.$store.commit('done')
+						// 			reject(err)
+						// 		})
+						// 	})
+						// }
 					}
 				}
 			}
@@ -54,6 +70,10 @@ export default {
 		 */
 		searchExamineLog(searchModel) {
 			this.$store.commit('process')
+			// if(searchModel.cdate){
+			// 	searchModel.cdate = new Date(searchModel.cdate)
+			// }
+			console.log(searchModel.cdate)
 			this.$axios.get('log/selectAll', {
 				params: searchModel
 			})
@@ -74,11 +94,6 @@ export default {
 		}
 	},
 	mounted() {
-		if(!this.$store.state.userId) 
-			return
-		if(this.$store.state.user.roles != "1") 
-			return this.$toast("你没有权限查看")
-
 		this.searchExamineLog(this.examineLog.searchModel)
 	}
 }

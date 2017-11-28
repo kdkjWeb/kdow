@@ -66,12 +66,6 @@ export default {
 				}],
 				objects:[],
 				options:{
-					search:{
-						enable: true,
-						action: (data)=>{
-
-						}
-					},
 					create:{
 						enable: true,
 						action: (data)=>{
@@ -205,8 +199,6 @@ export default {
 		}
 	},
 	mounted() {
-		if(!this.$store.state.userId) 
-			return
 		this.searchNewsList(this.newsManage.searchModel)
 	}
 }

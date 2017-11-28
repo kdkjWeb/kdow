@@ -87,18 +87,6 @@ export default {
           }
           this.$set(this.navPlatForm[index].children[_index], 'active', true)
       }
-   },
-   mounted() {
-      //将当前选中的nav设置为active
-      for(let [index, value] of this.navPlatForm.entries()){
-         for(let [_index, child] of this.navPlatForm[index].children.entries()){
-            if(this.$route.path == '/backStageManage' +
-                this.navPlatForm[index].children[_index].link){
-                this.$set(this.navPlatForm[index].children[_index], 'active', true)
-              break
-            }
-         }
-      }
    }
 }
 </script>

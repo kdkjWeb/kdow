@@ -44,6 +44,7 @@ export default {
 			this.$store.commit('process')
 			this.$axios.post('login', this.loginForm.model)
 			.then((res)=>{
+				console.log(res)
 				this.$store.commit('done')
 				if(res.data.code == 0){
 					//登录成功
@@ -52,7 +53,6 @@ export default {
 					sessionStorage.setItem("user",JSON.stringify(res.data.data))
 					this.user = res.data.data
 					this.$store.commit('setUser', this.user)
-					location.reload()
 				}else{
 					this.$toast(res.data.msg)
 				}
@@ -65,7 +65,6 @@ export default {
 		logout() {
 			sessionStorage.removeItem("user")
 			this.user = null
-			location.href = "#/"
 		},
 		hideNav(event) {
 			

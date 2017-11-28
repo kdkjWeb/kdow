@@ -265,8 +265,6 @@ export default {
 
 	},
 	mounted() {
-		if(!this.$store.state.userId) 
-			return
 		this.searchUserList(this.userList.searchModel)
 	}
 }

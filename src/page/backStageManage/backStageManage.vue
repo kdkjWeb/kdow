@@ -35,6 +35,12 @@
 			:noOptions="true"
 			@dialogCancel="showLoginDialog = false">
 			    <h3 class="noMargin">登录</h3>
+			    <!-- <form action="http://192.168.20.3:8080/kdkjgw/login" method="post">
+					<b>登录</b>
+					用户名<input name="username"/>
+					密码<input name="password"/>
+					<input type="submit"/>
+				</form> -->
 				<kdow-form 
 				:definition="loginForm.definition"
 				:objects="loginForm.model"

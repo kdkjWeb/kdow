@@ -82,7 +82,7 @@
 						'overflow':'hidden'
 					}">
 						<div class="container">
-							<div class="row">
+							<div class="row rowThree" :class="{active:isActive}">
 								<div class="col-md-offset-1 col-md-6">
 									<div class="main_content_page3_human">
 										<img src="/static/index/3/human.jpg" width="100%">
@@ -96,15 +96,14 @@
 											wqruwu Efihwd jHWASDkjn ASDF wqesdkjn Efdsfkjn jHdasdn dssdfk
 											d sdth shei svnslkj dalsdkasdsd. ajnsdaeqwoeij dmakls maskdqoweij asdmk mcmdk.
 										</p>
-										<div class="main_content_page3_leftTxt_btn">
+										<router-link class="main_content_page3_leftTxt_btn" to="">
 											<span>更多</span>
 											<img src="/static/index/3/news_btn_ico.png">
-										</div>
+										</router-link>
 									</div>
 									<div class="main_content_page3_rectangle">
 										<img src="/static/index/3/rectangle.png" width="30%">
 									</div>
-									
 								</div>
 								<div class="col-md-5 main_content_page3_right">
 									<div class="main_content_page3_rightImg">
@@ -146,7 +145,7 @@
 					<!-- 第四页 -->
 
 					<!-- 邓 -->
-					<div class="company_infor" :style="{ 'height': clientHeight + 'px' }">
+					<div class="company_infor rowFour" :style="{ 'height': clientHeight + 'px' }" :class="{activeTwo:isActiveTwo}">
 						<div :style="{ 'height': clientHeight / 2 + 'px' }" class="company_infor_top">
 							<div class="ci_top_box">
 								<div :style="{ 'height': clientHeight / 4 + 68 + 'px' }" 
@@ -185,7 +184,8 @@
 						</div>
 					</div>
 					<!-- 第四页 -->
-
+					<!-- 第五页 -->
+                      <kdow-footer :is-footer="true"></kdow-footer>
 				</div>
 
 				<div class="main_right_nav">
@@ -205,9 +205,9 @@
 					</ul>
 				</div>
 
-				<div class="main_bottom_btn" v-if="currentPage < 4">
+				<div class="main_bottom_btn" v-if="currentPage <5">
 					<img src="/static/index/tool/main_btm_btn1.png" alt="">
-					<img src="/static/index/tool/main_btm_btn2.png" alt="" @click="nextPage">
+					<img src="/static/index/tool/main_btm_btn2.png" alt="" @click="">
 				</div>
 			</div>
 		</div>
@@ -311,6 +311,7 @@
 	position: fixed;
 	top:0;
 }
+
 
 /*第二页*/
 .main_content_page2_top{
@@ -418,6 +419,24 @@
 /*第二页*/
 
 /*第三页*/
+/*第三页动态效果*/
+.rowThree .col-md-6{
+	transform: translateX(-200px);
+	transition: all .5s;
+}
+.rowThree .col-md-5{
+	transform: translateX(200px);
+	transition: all .5s;
+}
+.active .col-md-6{
+	transform: translateX(0);
+	transition: all 2.5s;
+}
+.active .col-md-5{
+	transform: translateX(0);
+	transition: all 2.5s;
+}
+
 .main_content_page3_human{
 
 }
@@ -542,6 +561,24 @@
 
 
 /* 邓 */
+/*第四页动画*/
+.rowFour .logo_box img{
+	opacity: 0;
+	transition: all .5s;
+}
+.rowFour .more_about{
+	transform: translateX(200px);
+	transition: all .5s;
+}
+.activeTwo .logo_box img{
+	opacity: 1;
+	transition: all 9s;
+}
+.activeTwo .more_about{
+	transform: translateX(0);
+	transition: all 5s;
+}
+
 .company_infor{
 	width: 100%;
 }

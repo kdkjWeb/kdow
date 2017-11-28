@@ -4,8 +4,8 @@ import axios from 'axios'
 
 axios.defaults.timeout = 5000;
 axios.defaults.withCredentials = true
-axios.defaults.baseURL = 'http://192.168.20.104:8088/kdkjgw/' //周庭兆
- // axios.defaults.baseURL = 'http://192.168.20.3:8080/kdkjgw/'//张新川
+// axios.defaults.baseURL = 'http://192.168.20.102:8088/kdkjgw/' //周庭兆
+ axios.defaults.baseURL = 'http://192.168.20.3:8080/kdkjgw/'//张新川
 // axios.defaults.baseURL = 'http://192.168.20.2:8888/kdkjgw/'//田涛银
 // axios.defaults.baseURL = 'http://192.168.20.8:8080/kdkjgw/'//林晨旭
 

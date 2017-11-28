@@ -165,8 +165,6 @@ export default {
 		}
 	},
 	mounted() {
-		if(!this.$store.state.userId) 
-			return
 		this.searchMompetenceList(this.competenceManage.searchModel)
 	}
 }

@@ -92,8 +92,7 @@ export default {
 					type: "string",
 					important: true,
 					validator(data) {
-						console.log(data.length)
-						return 'sdasd'
+						return data.length < 10
 					}
 				},{
 					id: "passwordInput",

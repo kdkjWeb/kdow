@@ -36,7 +36,6 @@
       <!-- 数字型输入框 -->
       <input 
       v-if="inputType == 'number' "
-       class="form-control"
       :class="[inputClass,{'inputError':isError}]" 
       type="number"
       :disabled="disabled"
@@ -51,7 +50,6 @@
       <input 
       v-if="inputType == 'date'"
       type="date"
-       class="form-control"
       :class="[inputClass,{'inputError':isError}]" 
       :disabled="disabled"
       :value="value"
@@ -90,7 +88,6 @@
       <!-- 范围选择框 -->
       <div v-if="inputType == 'rangeSelect'" >
         	<select 
-           class="form-control"
           style="padding:0 15px" 
           :disabled="disabled" 
           v-model="from">
@@ -103,7 +100,6 @@
         	</select>
         	<span>至</span>
         	<select 
-           class="form-control"
           style="padding:0 15px"
           :disabled="disabled"  
           v-model="to">
@@ -119,14 +115,12 @@
       <!-- 时间范围选择框 -->
       <div v-if="inputType == 'rangeDate'">
         	<input 
-           class="form-control"
           style="text-align:center"
           :disabled="disabled"  
           type="time" 
           v-model="from"/>
         	至
         	<input 
-           class="form-control"
           style="text-align:center"
           :disabled="disabled"  
           type="time" 
@@ -140,8 +134,7 @@
           :key="opt.key" 
           @click="updateCheckBoxValue($event)">
             <span v-text="opt.label"></span>
-            <input
-             class="form-control" 
+            <input 
             type="checkbox"
             :disabled="disabled" 
             style="cursor:pointer"
