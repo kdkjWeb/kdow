@@ -8,7 +8,7 @@ export default {
 					total: 0
 				},
 				config:{
-					noOptions: false,//控制每条数据的操作按钮显示
+					noOptions: true,//控制每条数据的操作按钮显示
 					noIndex: false,//控制表格的序号显示
 					title: '后台审核列表',//表格标题
 				},
@@ -46,7 +46,7 @@ export default {
 				objects:[],
 				options:{
 					create: {
-						enable: true,
+						// enable: true,
 						action:(data)=>{
 							if(!data.title || !data.content){
 								this.$toast("请输入完整信息")
