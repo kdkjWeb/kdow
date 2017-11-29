@@ -82,7 +82,7 @@
 						'overflow':'hidden'
 					}">
 						<div class="container">
-							<div class="row">
+							<div class="row rowThree" :class="{active:isActive}">
 								<div class="col-md-offset-1 col-md-6">
 									<div class="main_content_page3_human">
 										<img src="/static/index/3/human.jpg" width="100%">
@@ -109,10 +109,10 @@
 								<div class="col-md-5 main_content_page3_right">
 									<div class="main_content_page3_rightImg">
 										<img src="/static/index/3/news_img.jpg" width="100%">
-										<div class="main_content_page3_right_btn" style="top:41%">
+										<router-link class="main_content_page3_right_btn" style="top:41%">
 											<span>更多</span>
 											<img src="/static/index/3/news_btn_ico.png">
-										</div>
+										</router-link>
 									</div>
 									<div class="main_content_page3_right_content">
 										<div class="main_content_page3_right_content_shadow"></div>
@@ -133,10 +133,10 @@
 												<li>这是一条公告内容,巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉</li>
 											</ul>
 										</div>
-										<div class="main_content_page3_right_btn" style="bottom:8%;right:4%">
+										<router-link class="main_content_page3_right_btn" style="bottom:8%;right:4%">
 											<span>更多</span>
 											<img src="/static/index/3/news_btn_ico.png">
-										</div>
+										</router-link>
 									</div>
 								</div>
 							</div>
@@ -146,7 +146,7 @@
 					<!-- 第四页 -->
 
 					<!-- 邓 -->
-					<div class="company_infor" :style="{ 'height': clientHeight + 'px' }">
+					<div class="company_infor" :style="{ 'height': clientHeight + 'px' }" :class="{activeTwo:isActiveTwo}">
 						<div :style="{ 'height': clientHeight / 2 + 'px' }" class="company_infor_top">
 							<div class="ci_top_box">
 								<div :style="{ 'height': clientHeight / 4 + 68 + 'px' }" 
@@ -185,7 +185,8 @@
 						</div>
 					</div>
 					<!-- 第四页 -->
-
+                    <!-- 第五页 -->
+                    <kdow-footer :is-footer="true"></kdow-footer>
 				</div>
 
 				<div class="main_right_nav">
@@ -418,6 +419,24 @@
 /*第二页*/
 
 /*第三页*/
+/*第三页动态效果*/
+.rowThree .col-md-6{
+	transform: translateX(-200px);
+	transition: all .5s;
+}
+.rowThree .col-md-5{
+	transform: translateX(200px);
+	transition: all .5s;
+}
+.active .col-md-6{
+	transform: translateX(0);
+	transition: all 2.5s;
+}
+.active .col-md-5{
+	transform: translateX(0);
+	transition: all 2.5s;
+}
+
 .main_content_page3_human{
 
 }
@@ -542,6 +561,80 @@
 
 
 /* 邓 */
+/*第四页动画*/
+.rowFour .logo_box img{
+	opacity: 0;
+	transition: All 4s ease-in-out;
+    -webkit-transition: All 4s ease-in-out;
+    -moz-transition: All 4s ease-in-out;
+    -o-transition: All 4s ease-in-out;
+}
+.rowFour .more_about{
+	transform: translate(200px);
+	-webkit-transform: translate(200px);
+    -moz-transform: translate(200px);
+    -o-transform: translate(200px);
+    -ms-transform: translate(200px);
+	transition: all .5s linear;
+}
+.rowFour .top_describe{
+	opacity: 0;
+	transform: translateY(50px);
+	-webkit-transform: translateY(50px);
+    -moz-transform: translateY(50px);
+    -o-transform: translateY(50px);
+    -ms-transform: translateY(50px);
+    transition: all 5s; 
+}
+.rowFour .ci_contain_center{
+	opacity: 0;
+	transition: all 5s; 
+}
+.activeTwo .logo_box img{
+	opacity: 1;
+	transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+}
+.activeTwo .more_about{
+	transform: translate(0);
+	-webkit-transform: translate(0);
+    -moz-transform: translate(0);
+    -o-transform: translate(0);
+    -ms-transform: translate(0);
+	transition: all 5s;
+}
+.activeTwo .top_describe{
+	opacity: 1;
+	transform: translateY(0);
+	-webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -o-transform: translateY(0);
+    -ms-transform: translateY(0);
+}
+.activeTwo .ci_contain_center{
+	opacity: 1;
+	animation: fadeinL 5s ease-in-out;
+}
+ @-webkit-keyframes fadeinL{
+    0%{opacity:0;-webkit-transform:translateX(-100px);}
+    100%{opacity:1;-webkit-transform:translateX(0);}
+}
+@-moz-keyframes fadeinL{
+    0%{opacity:0;-moz-transform:translateX(-100px);}
+    100%{opacity:1;-moz-transform:translateX(0);}
+}
+@-ms-keyframes fadeinL{
+    0%{opacity:0;-ms-transform:translateX(-100px);}
+    100%{opacity:1;-ms-transform:translateX(0);}
+}
+@keyframes fadeinL{
+    0%{opacity:0;transform:translateX(-100px);}
+    100%{opacity:1;transform:translateX(0);}
+}
+
 .company_infor{
 	width: 100%;
 }
