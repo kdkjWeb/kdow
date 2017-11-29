@@ -27,6 +27,13 @@ import announcementManage from './page/announcementManage/announcementManage.vue
 import examineLog from './page/examineLog/examineLog.vue'
 import backStageAudit from './page/backStageAudit/backStageAudit'
 import userList from './page/userList/userList'
+import abuotUs from './page/aboutUs/aboutus.vue'
+import productShow from './page/productShow/productShow.vue'
+import personalCenter from './page/personalCenter/personalCenter.vue'
+import myCreation from './page/myCreation/myCreation.vue'
+import myProfile from './page/myProfile/myProfile.vue'
+import upLoad from './page/upLoad/upLoad.vue'
+
 
 export default [{
 	path: '/formtest',
@@ -126,5 +133,31 @@ export default [{
 		path: 'userList',
 		name: 'userList',
 		component: userList
+	}]
+},{
+	path: '/aboutUs',
+	name: 'abuotUs',
+	component: abuotUs
+},{
+	path: '/productShow',
+	name: 'productShow',
+	component: productShow
+},{
+	path: '/personalCenter',
+	name: 'personalCenter',
+	component: personalCenter,
+	redirect: 'myCreation',
+	children: [{
+		path: '/myCreation',
+		name: 'myCreation',
+		component: myCreation
+	},{
+		path: '/myProfile',
+		name: 'myProfile',
+		component: myProfile
+	},{
+		path: '/upLoad',
+		name: 'upLoad',
+		component: upLoad
 	}]
 }]
