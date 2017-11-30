@@ -12,8 +12,8 @@
 						     width="100%" alt=""/>
 					</div>
 				</div>   
-			</div>
-		</transition>
+			</div>  
+		</transition>       
 		<div class="news_main" ref="news_main">
 			<div class="container noPadding">
 				<div class="row">
