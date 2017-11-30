@@ -5,6 +5,7 @@ export default{
 			clientHeight: 0,
 			clientWidth: 0,
 			currentPage: 0,
+			isScrolling: false,
 			headerCss: {
 				nav_shadow_bg: 'navShadowBg',
 				header_bg: 'headerBg',
@@ -67,8 +68,15 @@ export default{
 				}
 			}
 			this.currentPage ++;
-			this.$refs.main_content.style.marginTop = parseInt(this.$refs.main_content.style.marginTop) - 
-			   this.clientHeight + 'px';
+			this.$Velocity(this.$refs.main_content, {
+				marginTop: parseInt(this.$refs.main_content.style.marginTop) - this.clientHeight + 'px'
+			},{
+				duration: 1500,
+				easing: "ease-in-out",
+				complete:()=>{
+					this.isScrolling = false
+				}
+			})
 		},
 		nextCarousel() {
 			if(this.carousel.currentPage < 4){
@@ -127,11 +135,25 @@ export default{
 			}else{
 				this.isActiveFive=false
 			}
+		},
+
+		/* 滚动方法 */
+		scrollFunc() {
+			console.log(this.$refs.main.scrollTop)
+			if(this.$refs.main.scrollTop){
+				this.$refs.main.scrollTop = 0
+				if(!this.isScrolling && this.currentPage < 4){
+					this.isScrolling = true
+					this.nextPage()
+				}
+			}
 		}
 	},
 	mounted() {
 		this.clientHeight = `${document.body.clientHeight}`;
 		this.clientWidth = `${document.body.clientWidth}`;
-		// document.body.style.overflow='hidden';
+
+		console.log(this.$refs.main)
+		document.body.style.overflow='hidden';
 	}
 }

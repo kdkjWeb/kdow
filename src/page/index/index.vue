@@ -15,7 +15,11 @@
 
 		<!-- 主页 -->
 		<div class="main_router">
-			<div class="main col-md-12 noPadding" :style="{
+			<div 
+			class="main col-md-12 noPadding"
+			ref="main"
+			@scroll="scrollFunc"
+			:style="{
 				'height': clientHeight + 'px'
 			}">
 				<div class="main_shadow col-md-12 " :style="{
@@ -109,7 +113,10 @@
 								<div class="col-md-5 main_content_page3_right">
 									<div class="main_content_page3_rightImg">
 										<img src="/static/index/3/news_img.jpg" width="100%">
-										<router-link class="main_content_page3_right_btn" style="top:41%">
+										<router-link 
+										class="main_content_page3_right_btn" 
+										style="top:41%"
+										to="">
 											<span>更多</span>
 											<img src="/static/index/3/news_btn_ico.png">
 										</router-link>
@@ -133,7 +140,10 @@
 												<li>这是一条公告内容,巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉</li>
 											</ul>
 										</div>
-										<router-link class="main_content_page3_right_btn" style="bottom:8%;right:4%">
+										<router-link 
+										class="main_content_page3_right_btn" 
+										style="bottom:8%;right:4%"
+										to="">
 											<span>更多</span>
 											<img src="/static/index/3/news_btn_ico.png">
 										</router-link>
@@ -288,7 +298,7 @@
 
 .main{
 	background: url("/static/index/1/main_bg.jpg") no-repeat 100% 100%;
-	overflow: hidden;
+	overflow: auto !important;
 }
 .main_shadow{
 	background-color: #000;
@@ -301,10 +311,7 @@
 	position: absolute;
 	width: 100%;
 	z-index: 3;
-	transition: all 1s ease-out;
-	-moz-transition: all 1s ease-out; /* Firefox 4 */
-	-webkit-transition: all 1s ease-out; /* Safari 和 Chrome */
-	-o-transition: all 1s ease-out; /* Opera */
+	
 }
 .header_div{
 	z-index:5;
