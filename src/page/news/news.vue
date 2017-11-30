@@ -4,21 +4,19 @@
 			<kdow-header/>
 			<div style="float:clear;"></div>
 		</div>
-		<transition class="news_banner">
-			<div class="container-fluid noPadding"> 
-				<div class="">
-					<div class="col-md-12 col-sm-12 col-xs-12 noPadding">
-						<img src="../../assets/news_banner.png"
-						     width="100%" alt=""/>
-					</div>
-				</div>
+		<!-- <transition class="news_banner"> -->
+		<div class="container-fluid noPadding" ref="news_banner"> 
+			<div class="col-md-12 col-sm-12 col-xs-12 noPadding">
+				<img src="../../assets/news_banner.png"
+				     width="100%" alt=""/>
 			</div>
-		</transition>
-		<div class="news_main" ref="news_main">
+		</div>
+		<!-- </transition> -->
+		<div class="news_main">
 			<div class="container noPadding">
 				<div class="row">
 					<div class="col-md-12 col-sm-12 col-xs-12 noPadding">
-						<div class="news_main_title">
+						<div class="news_main_title" ref="news_main_title">
 							<h2>最新资讯</h2>
 							<span>THE LATEST INFORMATION</span>
 						</div>
@@ -34,13 +32,20 @@
 						     :class="[{
 						     	'col-md-6':index < 2,
 						     	'col-md-12': index >1
-						     }, 'contentList' + index,{'contentList':(index < 2 ?leftRight1:(index==2?leftRight2:leftRight3))}]"
+						      },
+						     
+							 ]"
 						     >
+						 <!--      'contentList' + index,
+						      {'contentList':
+							      (index < 2 ?leftRight1:(index==2?leftRight2:leftRight3))
+							  } -->
 
 						    <!-- 图片div -->
 							<div :style="{
 							     	'float': index == 3?'right':'left'
 							     }"
+							     :ref="'mainImg'"
 							     class="col-sm-12 col-xs-12 news_main_img noPadding"
 							     :class="{
 							     	'col-md-12': index <= 1,
@@ -54,6 +59,7 @@
 
 							<!-- 文字描述div -->
 							<div class="news_main_txt col-sm-12 col-xs-12"
+							     :ref="'mainTxt'"
 							     :style="{
 							     	position: index > 1 && clientWidth >= 992?'absolute':'relative',
 							     	bottom: 0,
@@ -142,17 +148,19 @@
     .news_main{
     	width:100%;
     	background-color: #fff;
-    	margin-top:500px;
-    	overflow-x: hidden;
+    	/*margin-top:200px;*/
+    	/*opacity: 0;*/
+    	/*overflow-x: hidden;*/
+    	/*transition: all .5s cubic-bezier(0.000, 0.715, 0.340, 1.000)*/
     }
-    .contentList0,.contentList3 {
+  /*  .contentList0,.contentList3 {
     	left:-200px;
     	opacity:0;
     	-webkit-transition:all .5s linear .5s;
     	-o-transition:all .5s linear.5s;
     	-ms-transition:all .5s linear .5s;
     	-moz-transition:all .5s linear .5s;
-        tranition:all .5s linear .5s;
+        transition:all .5s linear .5s;
     }
     .contentList1,.contentList2 {
     	left:200px;
@@ -161,12 +169,12 @@
     	-o-transition:all .5s linear .5s;
     	-ms-transition:all .5s linear .5s;
     	-moz-transition:all .5s linear .5s;
-        tranition:all .5s linear .5s;
+        transition:all .5s linear .5s;
     }
     .contentList {
     	left:0px;
     	opacity:1;
-    }
+    }*/
     .news_main_img{
     	overflow: hidden;
     }
