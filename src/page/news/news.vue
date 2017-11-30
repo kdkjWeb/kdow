@@ -11,7 +11,7 @@
 						<img src="../../assets/news_banner.png"
 						     width="100%" alt=""/>
 					</div>
-				</div>
+				</div>   
 			</div>
 		</transition>
 		<div class="news_main" ref="news_main">
