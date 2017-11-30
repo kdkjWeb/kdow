@@ -1,6 +1,15 @@
 <template>
 
     <div class="abotus">
+    	<!--导航-->
+    	<div>
+    		<div class="header_div">
+			<kdow-header/>
+			<div style="float:clear;"></div>
+			
+			</div>
+			<div id="nav"></div>
+    	</div>
         <!-- banner图开始 -->
         <div class="container-fluid about-top">
             <div class="about-banner">
@@ -160,7 +169,17 @@ img{
     border: none;
 }
 /*去掉默认样式结束*/
-
+.header_div{
+    	position: fixed;
+    	top: 0;
+    	left: 0;
+    	width:100%;
+    	z-index:  5;
+    }
+#nav{
+	width: 100%;
+	height: 75px;
+}
 
 /*公司简介开始*/
 .company-profile-con{

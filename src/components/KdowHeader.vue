@@ -93,7 +93,7 @@ export default {
 				link: "/",
 				title: "首页"
 			},{
-				link: "/",
+				link: "/productShow",
 				title: "作品",
 				children:[{
 					title: "PC端",
@@ -106,7 +106,7 @@ export default {
 				link: "/news",
 				title: "活动中心"
 			},{
-				link: "/",
+				link: "/aboutUs",
 				title: "关于我们"
 			}]
 		}

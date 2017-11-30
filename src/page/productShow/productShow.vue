@@ -1,5 +1,16 @@
 <template>
     <div class="productShow">
+    	<!--导航-->
+    	<div>
+    		<div class="header_div">
+			<kdow-header/>
+			<div style="float:clear;"></div>
+			
+			</div>
+			<div id="nav"></div>
+    	</div>
+    	
+    	
         <!-- banner图开始 -->
         <div class="container-fluid about-top">
             <div class="about-banner">
@@ -91,7 +102,7 @@
         <!-- 所有产品结束 -->
 
         <!-- 头部开始 -->
-        <kdow-footer></kdow-footer>
+        <kdow-footer class="footerSM"></kdow-footer>
         <!-- 头部结束 -->
     </div>
 </template>
@@ -118,6 +129,18 @@ img{
     border: none;
 }
 /*去掉默认样式结束*/
+
+.header_div{
+    	position: fixed;
+    	top: 0;
+    	left: 0;
+    	width:100%;
+    	z-index:  5;
+    }
+#naV{
+	width: 100%;
+	height: 75px;
+}
 .container-con{
     margin: 0 auto;
 }
@@ -304,4 +327,10 @@ img{
     background: linear-gradient(to right,#64b0fd,#007fff);
 }
 /*所有产品结束*/
+
+.footerSM{
+	height:10%;
+	overflow: hidden;
+}
+
 </style>

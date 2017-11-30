@@ -1,5 +1,11 @@
 <template>
     <div class="center">
+    	<!--导航-->
+    	<div class="header_div">
+			<kdow-header/>
+			<div style="float:clear;"></div>
+		</div>
+		
         <div class="center-top">
             <div class="personNews">
                 <div class="headerPhone">

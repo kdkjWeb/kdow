@@ -186,7 +186,7 @@
 					</div>
 					<!-- 第四页 -->
                     <!-- 第五页 -->
-                    <kdow-footer :is-footer="true"></kdow-footer>
+                    <kdow-footer :is-footer="true" :class="{activeFive:isActiveFive}" class="rowFive"></kdow-footer>
 				</div>
 
 				<div class="main_right_nav">
@@ -717,6 +717,31 @@
 	margin: 0 auto;
 	cursor: pointer;
 }
+
+/*第五页动态效果*/
+/*@-webkit-keyframes fiveShow{
+    0%{-webkit-transform:scale(1.1);}
+    100%{-webkit-transform:scale(1);}
+}
+@-moz-keyframes fiveShow{
+    0%{-moz-transform:scale(1.1);}
+    100%{-moz-transform:scale(1);}
+}
+@-ms-keyframes fiveShow{
+    0%{-ms-transform:scale(1.1);}
+    100%{-ms-transform:scale(1);}
+}*/
+@keyframes fiveShow{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.1);}
+    100%{transform:scale(1);}
+}
+
+.activeFive{
+	animation: fiveShow 2s linear;
+}
+
+
 
 /**
  * 工具样式
