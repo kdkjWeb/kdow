@@ -146,7 +146,7 @@
 					<!-- 第四页 -->
 
 					<!-- 邓 -->
-					<div class="company_infor" :style="{ 'height': clientHeight + 'px' }" :class="{activeTwo:isActiveTwo}">
+					<div class="company_infor rowFour" :style="{ 'height': clientHeight + 'px' }" :class="{activeTwo:isActiveTwo}">
 						<div :style="{ 'height': clientHeight / 2 + 'px' }" class="company_infor_top">
 							<div class="ci_top_box">
 								<div :style="{ 'height': clientHeight / 4 + 68 + 'px' }" 
