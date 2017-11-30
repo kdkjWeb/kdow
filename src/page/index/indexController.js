@@ -122,6 +122,11 @@ export default{
 			}else{
 				this.isActiveTwo=false
 			}
+			if(index == 4){
+				this.isActiveFive=true
+			}else{
+				this.isActiveFive=false
+			}
 		}
 	},
 	mounted() {

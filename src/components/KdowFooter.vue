@@ -1,5 +1,8 @@
 <template>
 	<div class="footer text-center">
+		    <div class="footerImg">
+		    	<img src="../../static/images/footer.jpg"/>
+		    </div>
             <div class="footer-con">
                 <div class="content" v-if="isFooter">
                     <div>
@@ -17,7 +20,6 @@
                                              <p>{{list.title1}}</p>
                                              </li>
                                         </ul>
-
                                     </div>
                                     <div>
                                         <div class="code">
@@ -25,9 +27,7 @@
                                         </div>
                                         <p>{{footer.code.title}}</p>
                                     </div>
-
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -83,6 +83,12 @@
 </script>
 <style scoped="">
 /*底部开始*/
+.footerImg{
+	z-index: 11;
+	position: absolute;
+}
+
+
 .company-profile-con{
     margin-left: 0;
     margin-right: 0;
@@ -91,12 +97,18 @@
     list-style: none;
 }
 .footer{
-    background-image: url(../../static/images/footer.png);
-    background-size: cover;
-    background-repeat:no-repeat;
-    background-position:center;
     padding-bottom: 40px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
+
+.footer-con{
+	z-index: 99;
+	position: relative;
+	padding-top: 5%;
+}
+
 .footer h1{
     color: #fff;
     font-size: 32px;
@@ -136,7 +148,7 @@
 }
 .footer-record{
     height: 30px;
-    padding-top: 15px;
+    
 }
 .footer-record :after{
     display: block;
@@ -150,6 +162,7 @@
 .footer-record-left p{
     font-size: 12px;
     margin-bottom: 0px;
+    color: #fff;
 }
 .footer-record-right{
     padding-right: 80px;
@@ -161,8 +174,8 @@
     cursor: pointer;
 }
 .footer-record-right ul li:nth-child(2){
-    font-size: 35px;
-    margin-top: -6px;
+    font-size: 34px;
+    margin-top: -5px;
 }
 .footer-record:after{
     display: block;
@@ -184,9 +197,7 @@
         font-size: 16px;
         padding-bottom: 20px;
     }
-    /*.company-profile-con li p{
-        font-size: 14px;
-    }*/
+  
     .footer-record-left {
         width: 100%;
         padding: 0;
@@ -194,6 +205,7 @@
     }
     .footer-record-left p{
         text-align: center;
+        
     }
     .footer-record-right{
         width: 100%;

@@ -90,6 +90,7 @@ export default{
     width: 100%;
     height: 100%;
     background: rgba(0,0,0,.1);
+    z-index: 999;
 }
 .header{
     position: fixed;
@@ -101,6 +102,7 @@ export default{
     height: 393px;
     background: #fff;
     border-radius: 10px;
+   
 }
 .header-top{
     position: relative;
@@ -128,6 +130,7 @@ export default{
 }
 #header-file{
 	position: relative;
+	height: 220px;
 }
 
 
@@ -135,10 +138,13 @@ export default{
 	width: 215px;
 	height: 222px;
 	border: 1px solid #ccc;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 .header-file-img{
 	position: absolute;
-	left: 0;
+	right: 0;
 	top: 0;
 	width: 100%;
 	height: 100%;
@@ -156,7 +162,7 @@ export default{
 }
 .header-img{
 	position: absolute;
-	right: 0;
+	left: 230px;
 	top: 2px;
 	width: 90px;
 	height: 90px;
