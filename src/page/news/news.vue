@@ -4,7 +4,6 @@
 			<kdow-header/>
 			<div style="float:clear;"></div>
 		</div>
-		<!-- <transition class="news_banner"> -->
 		<div class="container-fluid noPadding" ref="news_banner"> 
 			<div class="col-md-12 col-sm-12 col-xs-12 noPadding">
 				<img src="../../assets/news_banner.png"
@@ -13,6 +12,17 @@
 		</div>
 		<!-- </transition> -->
 		<div class="news_main">
+		<transition class="news_banner">
+			<div class="container-fluid noPadding"> 
+				<div class="">
+					<div class="col-md-12 col-sm-12 col-xs-12 noPadding">
+						<img src="../../assets/news_banner.png"
+						     width="100%" alt=""/>
+					</div>
+				</div>   
+			</div>  
+		</transition>       
+		<div class="news_main" ref="news_main">
 			<div class="container noPadding">
 				<div class="row">
 					<div class="col-md-12 col-sm-12 col-xs-12 noPadding">
