@@ -19,8 +19,18 @@
 				@mouseenter="showNavChild(index)"
 				@mouseleave="hideNavChild(index)">
 				<router-link :to="nav.link">
-				<span v-text="nav.title"></span>
-				<img class="nav_hover_bg" style="left: 0px" src="/static/index/1/nav_bg.png"/>
+				<span 
+				v-text="nav.title"
+				:style="{
+					'color': nav.active?'#71cfff':null
+				}"></span>
+				<img 
+				class="nav_hover_bg" 
+				style="left: 0px;"
+				:style="{
+					'opacity': nav.active?'1': null
+				}" 
+				src="/static/index/1/nav_bg.png"/>
 				</router-link>
 				<transition name="nav_children_fade">
 					<ul class="nav_children" v-if="nav.showChild && nav.children && nav.children.length > 0">
@@ -29,8 +39,10 @@
 							:style="{
 							'border-bottom': index < nav.children.length - 1?'1px solid #ccc':''
 							}">
-							<router-link :to="child.link">
-							<span v-text="child.title"></span>
+							<router-link 
+							:to="child.link">
+							<span 
+							v-text="child.title"></span>
 							</router-link>
 							
 						</li>
@@ -134,6 +146,15 @@ export default {
 			// 检测用户是否登录, 登录则显示下方ul, 未登录则显示登录弹窗.
 			this.$emit('isNeedToLogin', true);//需要登录
 		}
+	},
+	mounted() {
+		for(let [index, elem] of this.nav_li.entries()){
+			this.$set(elem, 'active', false)
+			if(elem.link == this.$route.path){
+				this.$set(elem, 'active', true)
+				break;
+			}
+		}
 	}
 }
 </script>
@@ -199,6 +220,7 @@ header .nav_img{
 .navbar-nav li a:hover{
 	background: none;
 }
+
 
 .open a{
 	background: none;

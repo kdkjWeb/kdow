@@ -163,10 +163,6 @@ export default {
 				marginLeft: '-100px'
 			})
 
-			// Object.assign(ref.mainImg0[0].style, {
-			// 	opacity: 0
-			// })
-			console.log(ref.mainTxt)
 		},
 		showBanner() {
 			this.$Velocity(this.$refs.news_banner, {
