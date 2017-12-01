@@ -311,7 +311,11 @@
 	position: absolute;
 	width: 100%;
 	z-index: 3;
-	
+	transition: all 1s ease-out;
+	-moz-transition: all 1s ease-out; /* Firefox 4 */
+	-webkit-transition: all 1s ease-out; /* Safari 和 Chrome */
+	-o-transition: all 1s ease-out; /* Opera */
+
 }
 .header_div{
 	z-index:5;

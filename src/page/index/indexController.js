@@ -71,7 +71,7 @@ export default{
 			this.$Velocity(this.$refs.main_content, {
 				marginTop: parseInt(this.$refs.main_content.style.marginTop) - this.clientHeight + 'px'
 			},{
-				duration: 1500,
+				duration: 1000,
 				easing: "ease-in-out",
 				complete:()=>{
 					this.isScrolling = false
@@ -139,7 +139,6 @@ export default{
 
 		/* 滚动方法 */
 		scrollFunc() {
-			console.log(this.$refs.main.scrollTop)
 			if(this.$refs.main.scrollTop){
 				this.$refs.main.scrollTop = 0
 				if(!this.isScrolling && this.currentPage < 4){
@@ -152,8 +151,6 @@ export default{
 	mounted() {
 		this.clientHeight = `${document.body.clientHeight}`;
 		this.clientWidth = `${document.body.clientWidth}`;
-
-		console.log(this.$refs.main)
-		document.body.style.overflow='hidden';
+		// document.body.style.overflow='hidden';
 	}
 }
