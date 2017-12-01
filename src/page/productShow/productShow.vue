@@ -38,8 +38,8 @@
                                     <div class="hotproduct-con-des">
                                         <h4 class="prdoduct-name">{{list.title}}</h4>
                                         <p class="product-date">发布时间：{{list.date}}</p>
-                                        <p class="product-author"><router-link to="#">作者：<span>{{list.author}}</span></router-link></p>
-                                        <p class="product-description"><ruter-link to="#">作品描述：{{list.description}}</ruter-link></p>
+                                        <p class="product-author"><router-link to="/">作者：<span>{{list.author}}</span></router-link></p>
+                                        <p class="product-description"><router-link to="/">作品描述：{{list.description}}</router-link></p>
                                     </div>
                                     <a href="" class="link hotproduct-link">立即下载</a>
                                 </div>
@@ -53,8 +53,8 @@
                                     <div class="hotproduct-con-des">
                                         <h4 class="prdoduct-name">{{list.title}}</h4>
                                         <p class="product-date">发布时间：{{list.date}}</p>
-                                        <p class="product-author"><router-link to="#">作者：<span>{{list.author}}</span></router-link></p>
-                                        <p class="product-description"><ruter-link to="#">作品描述：{{list.description}}</ruter-link></p>
+                                        <p class="product-author"><router-link to="/">作者：<span>{{list.author}}</span></router-link></p>
+                                        <p class="product-description"><router-link to="/">作品描述：{{list.description}}</router-link></p>
                                     </div>
                                     <a href="" class="link hotproduct-link">立即下载</a>
                                 </div>
@@ -88,8 +88,8 @@
                             <div class="allProduct-con">
                             <h4 class="prdoduct-name">{{list.title}}</h4>
                             <p class="product-date">发布时间：{{list.date}}</p>
-                            <p class="product-author"><router-link to="#">作者：<span>{{list.author}}</span></router-link></p>
-                            <p class="product-description"><ruter-link to="#">作品描述：{{list.description}}</ruter-link></p>
+                            <p class="product-author"><router-link to="/">作者：<span>{{list.author}}</span></router-link></p>
+                            <p class="product-description"><router-link to="/">作品描述：{{list.description}}</router-link></p>
                             <a class="link">立即下载</a>
                         </div>
                         </div>
@@ -151,7 +151,7 @@ img{
 }
 .hotproduct-list{
     position: relative;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
 }
 .hotproduct-list img{
     width: 100%;
