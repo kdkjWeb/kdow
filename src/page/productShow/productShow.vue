@@ -137,7 +137,7 @@ img{
     	width:100%;
     	z-index:  5;
     }
-#naV{
+#nav{
 	width: 100%;
 	height: 75px;
 }
@@ -151,7 +151,6 @@ img{
 }
 .hotproduct-list{
     position: relative;
-    border: 1px solid blue;
     margin-bottom: 16px;
 }
 .hotproduct-list img{
@@ -161,8 +160,6 @@ img{
 .hotproduct-list1{
     width: 450px;
     margin-left: 20px;
-    border: 1px solid red;
-
 }
 #hotproduct-con-des{
     width: 450px;
