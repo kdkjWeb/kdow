@@ -58,7 +58,7 @@ export default {
 	},
 	methods:{
 		menu() {
-	        let scroll = document.body.scrollTop
+	        let scroll = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop
 	        if(scroll > 163 && !this.hasShown.title){
 	        	this.showMainTitle()
 	        }
@@ -265,6 +265,7 @@ export default {
 	mounted() {
 		this.clientWidth = `${document.body.clientWidth}`;
 		this.clientHeight = `${document.body.clientHeight}`;
+		document.body.scrollTop = 0 //保证每次初始化进入都在最顶部
 
 		window.onresize = ()=>{
 			this.clientWidth = `${document.body.clientWidth}`;
