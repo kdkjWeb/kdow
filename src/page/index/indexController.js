@@ -1,6 +1,9 @@
 export default{
 	data() {
 		return {
+			isActive:false,
+			isActiveTwo:false,
+			isActiveFive:false,
 			showLoginDialog: false,
 			clientHeight: 0,
 			clientWidth: 0,
@@ -67,6 +70,7 @@ export default{
 					nav_ico_bg: 'navIcoBg_2'
 				}
 			}
+			console.log(this.currentPage);
 			this.currentPage ++;
 			this.$Velocity(this.$refs.main_content, {
 				marginTop: parseInt(this.$refs.main_content.style.marginTop) - this.clientHeight + 'px'
@@ -77,6 +81,28 @@ export default{
 					this.isScrolling = false
 				}
 			})
+			this.jumpTo(this.currentPage);
+		},
+		prevPage(){
+			if(this.currentPage === 0){
+				this.headerCss = {
+					nav_shadow_bg: 'navShadowBg_2',
+					header_bg: 'headerBg_2',
+					nav_ico_bg: 'navIcoBg_2'
+				}
+			}
+			console.log(this.currentPage);
+			this.currentPage --;
+			this.$Velocity(this.$refs.main_content, {
+				marginTop: parseInt(this.$refs.main_content.style.marginTop) + parseInt(this.clientHeight) + 'px'
+			},{
+				duration: 1000,
+				easing: "ease-in-out",
+				complete:()=>{
+					this.isScrolling = false
+				}
+			})
+			this.jumpTo(this.currentPage);
 		},
 		nextCarousel() {
 			if(this.carousel.currentPage < 4){
@@ -139,18 +165,37 @@ export default{
 
 		/* 滚动方法 */
 		scrollFunc() {
-			if(this.$refs.main.scrollTop){
-				this.$refs.main.scrollTop = 0
-				if(!this.isScrolling && this.currentPage < 4){
+			//console.log(this.$refs.main.scrollTop)
+			if(!this.isScrolling) {
+				if(this.currentPage < 4 && this.$refs.main.scrollTop >= 1){
+					this.$refs.main.scrollTop = 1;
 					this.isScrolling = true
 					this.nextPage()
+				}else if(this.currentPage > 0 && this.$refs.main.scrollTop < 1){
+					this.$refs.main.scrollTop = 1;
+					this.isScrolling = true
+					this.prevPage();
 				}
+				
+				
 			}
+
+			// if(this.$refs.main.scrollTop){
+			// 	this.$refs.main.scrollTop = 0;
+			// 	if(!this.isScrolling && this.currentPage < 4){
+			// 		this.isScrolling = true
+			// 		this.nextPage()
+			// 	}
+			// }
+
+
 		}
 	},
 	mounted() {
 		this.clientHeight = `${document.body.clientHeight}`;
 		this.clientWidth = `${document.body.clientWidth}`;
-		// document.body.style.overflow='hidden';
+
+		console.log(this.$refs.main)
+		document.body.style.overflow='hidden';
 	}
 }

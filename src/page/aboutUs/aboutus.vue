@@ -261,8 +261,6 @@ img{
     margin-top: 5px;
 }
 .service-title{
-    position: relative;
-    z-index: 999;
     color: #fff;
     margin-top: 10px;
 }
