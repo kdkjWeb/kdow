@@ -70,11 +70,33 @@ export default{
 					nav_ico_bg: 'navIcoBg_2'
 				}
 			}
+			console.log(this.currentPage);
 			this.currentPage ++;
 			this.$Velocity(this.$refs.main_content, {
 				marginTop: parseInt(this.$refs.main_content.style.marginTop) - this.clientHeight + 'px'
 			},{
-				duration: 1500,
+				duration: 1000,
+				easing: "ease-in-out",
+				complete:()=>{
+					this.isScrolling = false
+				}
+			})
+			this.jumpTo(this.currentPage);
+		},
+		prevPage(){
+			if(this.currentPage === 0){
+				this.headerCss = {
+					nav_shadow_bg: 'navShadowBg_2',
+					header_bg: 'headerBg_2',
+					nav_ico_bg: 'navIcoBg_2'
+				}
+			}
+			console.log(this.currentPage);
+			this.currentPage --;
+			this.$Velocity(this.$refs.main_content, {
+				marginTop: parseInt(this.$refs.main_content.style.marginTop) + parseInt(this.clientHeight) + 'px'
+			},{
+				duration: 1000,
 				easing: "ease-in-out",
 				complete:()=>{
 					this.isScrolling = false
@@ -144,12 +166,18 @@ export default{
 		/* 滚动方法 */
 		scrollFunc() {
 			//console.log(this.$refs.main.scrollTop)
-			if(this.$refs.main.scrollTop){
-				this.$refs.main.scrollTop = 0;
-				if(!this.isScrolling && this.currentPage < 4){
+			if(!this.isScrolling) {
+				if(this.currentPage < 4 && this.$refs.main.scrollTop >= 1){
+					this.$refs.main.scrollTop = 1;
 					this.isScrolling = true
 					this.nextPage()
+				}else if(this.currentPage > 0 && this.$refs.main.scrollTop < 1){
+					this.$refs.main.scrollTop = 1;
+					this.isScrolling = true
+					this.prevPage();
 				}
+				
+				
 			}
 
 			// if(this.$refs.main.scrollTop){
