@@ -25,7 +25,7 @@
 				<div class="main_shadow col-md-12 " :style="{
 				'height': clientHeight + 'px'}"></div>
 
-				<div class="main_content" style="margin-top: 0" ref="main_content">
+				<div class="main_content" style="margin-top: 0" ref="main_content" :class="{active:isActive}">
 					<!-- 第一页 -->
 					<div :style="{
 						'height': clientHeight + 'px',
@@ -311,11 +311,7 @@
 	position: absolute;
 	width: 100%;
 	z-index: 3;
-	transition: all 1s ease-out;
-	-moz-transition: all 1s ease-out; /* Firefox 4 */
-	-webkit-transition: all 1s ease-out; /* Safari 和 Chrome */
-	-o-transition: all 1s ease-out; /* Opera */
-
+	
 }
 .header_div{
 	z-index:5;
