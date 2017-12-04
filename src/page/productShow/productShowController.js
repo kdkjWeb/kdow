@@ -2,7 +2,7 @@ export default{
     data() {
         return {
             listIndex: 0,
-            //iconClass: ['icon-shouji','icon-diannao'],
+            footerShow: true,
             iconColor: 0,
             banner: {
                 src: '../../../static/images/about-banner.jpg',

@@ -1,10 +1,11 @@
 <template>
-	<div class="footer text-center">
-		    <div class="footerImg">
+    <div>
+	    <div class="footer text-center"  v-if="isFooter" :style="{'height': clientHeight + 'px'}">
+		    <!-- <div class="footerImg">
 		    	<img src="../../static/images/footer.jpg"/>
-		    </div>
+		    </div> -->
             <div class="footer-con">
-                <div class="content" v-if="isFooter">
+                <div class="content">
                     <div>
                         <h1>欢迎与我们联系</h1>
                         <p class="footer-con-title">WELCOME TO CONTACT US</p>
@@ -44,6 +45,24 @@
                 </div>
             </div>
         </div>
+
+
+        <!-- 较小块的底部 -->
+
+        <div class="footer-record" v-if="footerShow" id="footer-record">
+                <div class="footer-record-left pull-left">
+                    <p>Copyright © 2017觅元素 浙ICP备16007586号-1</p>
+                    <p class="text-left">浙公网安备 33010902001056号</p>
+                </div>
+                <div class="footer-record-right pull-right">
+                    <ul>
+                        <li class="iconfont pull-left" :class="list" v-for="list in footer.iconClass"></li>
+                    </ul>
+                </div>
+        </div>
+
+
+    </div>
 </template>
 <script>
 	export default{
@@ -51,10 +70,15 @@
             isFooter: {
               type: Boolean,
               default: false
+            },
+            footerShow: {
+                type: Boolean,
+                default: false
             }
           },
 		data(){
 			return {
+                clientHeight: 0,
 				footer: {
                 footerList:[
                 {
@@ -78,7 +102,10 @@
             iconClass: ['icon-qq','icon-weibo','icon-weixin']
         }
 			}
-		}
+		},
+        mounted(){
+            this.clientHeight = `${document.body.clientHeight}`
+        }
 	}
 </script>
 <style scoped="">
@@ -100,6 +127,7 @@
     padding-bottom: 40px;
     width: 100%;
     height: 100%;
+    background: url('../../static/images/footer.jpg') no-repeat;
     overflow: hidden;
 }
 
@@ -148,7 +176,7 @@
 }
 .footer-record{
     height: 30px;
-    
+    margin-top: 10%;
 }
 .footer-record :after{
     display: block;
@@ -186,45 +214,11 @@
 .company-profile-con li:hover{
     background: #215671;
 }
-@media screen and (max-width: 768px){
-    .footer{
-        padding-bottom: 50px;
-    }
-    .footer h1{
-        font-size: 20px;
-    }
-    .footer p.footer-con-title{
-        font-size: 16px;
-        padding-bottom: 20px;
-    }
-  
-    .footer-record-left {
-        width: 100%;
-        padding: 0;
-        /*margin: 0 auto;*/
-    }
-    .footer-record-left p{
-        text-align: center;
-        
-    }
-    .footer-record-right{
-        width: 100%;
-        padding-right: 0;
-    }
-    .footer-record-right ul{
-        display: table;
-        text-align: center;
-        /*width: 100%;*/
-        margin: 0 auto;
-       /* text-align: center;*/
-    }
-    .footer-record-right ul li{
-        display: inline-block;
-    }
-    .footer .code{
-        margin-top: 30px;
-    }
-
+#footer-record{
+    background: rgba(0,0,0,.2);
+    height: 70px;
+    margin-top: 0;
+    padding-top: 15px;
 }
 /*底部结束*/
 </style>

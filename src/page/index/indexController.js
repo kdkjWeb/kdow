@@ -165,7 +165,6 @@ export default{
 
 		/* 滚动方法 */
 		scrollFunc() {
-			//console.log(this.$refs.main.scrollTop)
 			if(!this.isScrolling) {
 				if(this.currentPage < 4 && this.$refs.main.scrollTop >= 1){
 					this.$refs.main.scrollTop = 1;
@@ -176,26 +175,20 @@ export default{
 					this.isScrolling = true
 					this.prevPage();
 				}
-				
-				
+						
 			}
-
-			// if(this.$refs.main.scrollTop){
-			// 	this.$refs.main.scrollTop = 0;
-			// 	if(!this.isScrolling && this.currentPage < 4){
-			// 		this.isScrolling = true
-			// 		this.nextPage()
-			// 	}
-			// }
 
 
 		}
+
+
+
 	},
 	mounted() {
 		this.clientHeight = `${document.body.clientHeight}`;
 		this.clientWidth = `${document.body.clientWidth}`;
 
 		console.log(this.$refs.main)
-		document.body.style.overflow='hidden';
+		// document.body.style.overflow='hidden';
 	}
 }

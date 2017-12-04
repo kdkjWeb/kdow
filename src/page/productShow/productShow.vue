@@ -101,9 +101,9 @@
         </div>
         <!-- 所有产品结束 -->
 
-        <!-- 头部开始 -->
-        <kdow-footer class="footerSM"></kdow-footer>
-        <!-- 头部结束 -->
+        <!-- 底部开始 -->
+        <kdow-footer :footer-show="footerShow"></kdow-footer>
+        <!-- 底部结束 -->
     </div>
 </template>
 

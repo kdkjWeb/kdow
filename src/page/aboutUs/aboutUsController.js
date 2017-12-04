@@ -5,6 +5,7 @@ export default{
     data() {
         return {
             isFooter: false,
+            footerShow: true,
             tabIndex: 2,
             teamIndex:2,
             lastIndex:0,

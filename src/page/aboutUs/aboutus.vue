@@ -140,7 +140,7 @@
         <!-- 地理坐标结束 -->
 
         <!-- 底部开始-->
-         <kdow-footer :is-footer="isFooter"></kdow-footer>
+         <kdow-footer :footer-show="footerShow"></kdow-footer>
         <!-- 底部结束 -->
     </div>
 
@@ -174,7 +174,7 @@ img{
     	top: 0;
     	left: 0;
     	width:100%;
-    	z-index:  5;
+    	z-index: 999;
     }
 #nav{
 	width: 100%;
