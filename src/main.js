@@ -8,6 +8,12 @@ Vue.use(VueRouter)
 Vue.use(Vuex)
 
 
+//引入babel-polyfill 解决IE浏览器兼容问题
+
+// import 'babel-polyfill'
+
+
+
 import axiosConfig from './axiosConfig.js'
 import Velocity from 'velocity-animate'
 Object.defineProperty(Vue.prototype, '$Velocity', { value: Velocity });

@@ -141,11 +141,13 @@
     color: #fff;
     font-size: 32px;
     font-weight: bold;
-    padding: 30px 0 15px;
+    /*padding: 10px 0 15px;*/
+    padding-top: 1%;
 }
 .footer p.footer-con-title{
     color: #666;
-    padding-bottom: 40px;
+    /*padding-bottom: 40px;*/
+    padding-bottom: 3%;
 }
 .footer li span{
     display: inline-block;
@@ -168,7 +170,8 @@
     padding: 10px;
     background: url('../../static/images/footer-border.png') no-repeat;
     background-size: 100% 100%;
-    margin: 50px auto 10px;
+    /*margin: 50px auto 10px;*/
+    margin: 4% auto 2%;
 }
 .code img{
     width: 100%;
@@ -176,7 +179,7 @@
 }
 .footer-record{
     height: 30px;
-    margin-top: 10%;
+   /* margin-top: 10%;*/
 }
 .footer-record :after{
     display: block;

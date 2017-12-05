@@ -1,6 +1,7 @@
 export default {
 	data() {
 		return {
+			footerShow: true,
 			searchModel: {
 				current: 1,
 				pageSize: 4,

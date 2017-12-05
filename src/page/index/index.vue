@@ -327,7 +327,7 @@
 .main_content_page2_main{
 	width: 1205px;
 	position: absolute;
-	top: 28%;
+	top: 23%;
 	overflow: hidden;
 }
 .main_content_page2_carousel{
@@ -335,15 +335,16 @@
 	transition: all .5s;
 }
 .main_content_page2_carousel div{
-	width: 365px;
-	height: 525px;
-	margin: 0 10px;
+	width: 13%;
+	height: 70%;
+	margin: 0 20px;
 	display: inline-block;
 	overflow: hidden;
 	position: relative;
 }
 .main_content_page2_carousel_div{
 	transition:  all .5s;
+	height: 70%
 }
 .main_content_page2_carousel div img{
 	transition: all .5s;
@@ -406,19 +407,19 @@
 	position: absolute;
 	font-size: 50px;
 	font-weight: 100;
-	top: 38%;
+	top: 32%;
 	transform:scale(1,2);
 	cursor: pointer;
 }
 .carousel_preBtn{
-	left: 5%;
+	left: 4%;
 }
 .carousel_nextBtn{
-	right:  5%;
+	right:  4%;
 }
 .carousel_active{
 	width: 415px !important; 
-	height: 600px !important;
+	height: 80% !important;
 }
 .main_content_page2_more{
 	padding: 10px 10px;
@@ -427,25 +428,82 @@
 
 /*第三页*/
 /*第三页动态效果*/
-.rowThree .col-md-6{
+/*.rowThree .col-md-6{
 	transform: translateX(-200px);
 	transition: all .5s;
+}*/
+.rowThree .col-md-6{
+	opacity: 0;
+	transition: all 3s; 
 }
 .rowThree .col-md-5{
-	transform: translateX(200px);
-	transition: all .5s;
+	opacity: 0;
+	transition: all 3s; 
 }
 .active .col-md-6{
-	transform: translateX(0);
-	transition: all 2.5s;
+	opacity: 1;
+	animation: bounceinL 3s ease-in-out;
 }
+@-webkit-keyframes bounceinL{
+    0%{opacity:0;-webkit-transform:translateX(-100px);}
+    60%{opacity:1;-webkit-transform:translateX(30px);}
+    80%{-webkit-transform:translateX(-10px);}
+    100%{-webkit-transform:translateX(0);}
+}
+@-moz-keyframes bounceinL{
+    0%{opacity:0;-moz-transform:translateX(-100px);}
+    60%{opacity:1;-moz-transform:translateX(30px);}
+    80%{-moz-transform:translateX(-10px);}
+    100%{-moz-transform:translateX(0);}
+}
+@-ms-keyframes bounceinL{
+    0%{opacity:0;-ms-transform:translateX(-100px);}
+    60%{opacity:1;-ms-transform:translateX(30px);}
+    80%{-ms-transform:translateX(-10px);}
+    100%{-ms-transform:translateX(0);}
+}
+@keyframes bounceinL{
+    0%{opacity:0;transform:translateX(-100px);}
+    60%{opacity:1;transform:translateX(30px);}
+    80%{transform:translateX(-10px);}
+    100%{transform:translateX(0);}
+}
+
 .active .col-md-5{
-	transform: translateX(0);
-	transition: all 2.5s;
+	opacity: 1;
+	animation: bounceinR 3s ease-in-out;
+}
+@-webkit-keyframes bounceinR{
+    0%{opacity:0;-webkit-transform:translateX(100px);}
+    60%{opacity:1;-webkit-transform:translateX(-30px);}
+    80%{-webkit-transform:translateX(10px);}
+    100%{-webkit-transform:translateX(0);}
+}
+@-moz-keyframes bounceinR{
+    0%{opacity:0;-moz-transform:translateX(100px);}
+    60%{opacity:1;-moz-transform:translateX(-30px);}
+    80%{-moz-transform:translateX(10px);}
+    100%{-moz-transform:translateX(0);}
+}
+@-ms-keyframes bounceinR{
+    0%{opacity:0;-ms-transform:translateX(100px);}
+    60%{opacity:1;-ms-transform:translateX(-30px);}
+    80%{-ms-transform:translateX(10px);}
+    100%{-ms-transform:translateX(0);}
+}
+@keyframes bounceinR{
+    0%{opacity:0;transform:translateX(100px);}
+    60%{opacity:1;transform:translateX(-30px);}
+    80%{transform:translateX(10px);}
+    100%{transform:translateX(0);}
 }
 
 .main_content_page3_human{
+	height: 300px;
 
+}
+.main_content_page3_human img{
+	height: 420px;
 }
 .main_content_page3_rectangle{
 	opacity: .6;
@@ -455,7 +513,7 @@
 }
 .main_content_page3_leftTxt{
 	position: absolute;
-	top:  65%;
+	top:  75%;
 	color: #fff;
 }
 .main_content_page3_leftTxt_btn{
@@ -477,7 +535,7 @@
 }
 .main_content_page3_right_content{
 	position: relative;
-	height: 330px;
+	height: 308px;
 	background:  url('/static/index/3/news_border.png') no-repeat 40px 180px;
 }
 .main_content_page3_right_content_shadow{
@@ -485,7 +543,7 @@
 	opacity: .2;
 	width: 100%;
 	/*top:  0;*/
-	height: 100%;
+	height: 96%;
 }
 .main_content_page3_right_content_main{
 	position: absolute;
@@ -571,10 +629,10 @@
 /*第四页动画*/
 .rowFour .logo_box img{
 	opacity: 0;
-	transition: All 4s ease-in-out;
-    -webkit-transition: All 4s ease-in-out;
-    -moz-transition: All 4s ease-in-out;
-    -o-transition: All 4s ease-in-out;
+	transition: All 3s ease-in-out;
+    -webkit-transition: All 3s ease-in-out;
+    -moz-transition: All 3s ease-in-out;
+    -o-transition: All 3s ease-in-out;
 }
 .rowFour .more_about{
 	transform: translate(200px);
@@ -591,11 +649,11 @@
     -moz-transform: translateY(50px);
     -o-transform: translateY(50px);
     -ms-transform: translateY(50px);
-    transition: all 5s; 
+    transition: all 3s; 
 }
 .rowFour .ci_contain_center{
 	opacity: 0;
-	transition: all 5s; 
+	transition: all 3s; 
 }
 .activeTwo .logo_box img{
 	opacity: 1;
@@ -611,7 +669,7 @@
     -moz-transform: translate(0);
     -o-transform: translate(0);
     -ms-transform: translate(0);
-	transition: all 5s;
+	transition: all 3s;
 }
 .activeTwo .top_describe{
 	opacity: 1;
@@ -623,7 +681,7 @@
 }
 .activeTwo .ci_contain_center{
 	opacity: 1;
-	animation: fadeinL 5s ease-in-out;
+	animation: fadeinL 3s ease-in-out;
 }
  @-webkit-keyframes fadeinL{
     0%{opacity:0;-webkit-transform:translateX(-100px);}
@@ -724,25 +782,11 @@
 	margin: 0 auto;
 	cursor: pointer;
 }
-
-/*第五页动态效果*/
-/*@-webkit-keyframes fiveShow{
-    0%{-webkit-transform:scale(1.1);}
-    100%{-webkit-transform:scale(1);}
-}
-@-moz-keyframes fiveShow{
-    0%{-moz-transform:scale(1.1);}
-    100%{-moz-transform:scale(1);}
-}
-@-ms-keyframes fiveShow{
-    0%{-ms-transform:scale(1.1);}
-    100%{-ms-transform:scale(1);}
-}*/
-@keyframes fiveShow{
+/*@keyframes fiveShow{
     0%{transform:scale(1);}
     50%{transform:scale(1.1);}
     100%{transform:scale(1);}
-}
+}*/
 
 .activeFive{
 	animation: fiveShow 2s linear;

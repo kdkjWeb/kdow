@@ -124,6 +124,11 @@
 				</div>
 			</div>
 		</div>
+
+		<!-- 底部开始-->
+         <kdow-footer :footer-show="footerShow"></kdow-footer>
+        <!-- 底部结束 -->
+
 	</div>
 </template>
 <script>
@@ -146,6 +151,7 @@
     .news_main{
     	width:100%;
     	background-color: #fff;
+    	overflow: hidden;
     	/*margin-top:200px;*/
     	/*opacity: 0;*/
     	/*overflow-x: hidden;*/

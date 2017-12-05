@@ -89,7 +89,7 @@
                             <h4 class="prdoduct-name">{{list.title}}</h4>
                             <p class="product-date">发布时间：{{list.date}}</p>
                             <p class="product-author"><router-link to="/">作者：<span>{{list.author}}</span></router-link></p>
-                            <p class="product-description"><router-link to="/">作品描述：{{list.description}}</router-link></p>
+                            <p class="product-description" :title="list.description"><router-link to="/">作品描述：{{list.description}}</router-link></p>
                             <a class="link">立即下载</a>
                         </div>
                         </div>
@@ -267,7 +267,12 @@ img{
     color: #b2b2b2;
     padding-right: 20px;
     overflow:hidden;
-    text-overflow:ellipsis;
+    width: 100%;
+    white-space:nowrap;
+    text-overflow:ellipsis; 
+    -o-text-overflow:ellipsis; 
+    -moz-text-overflow: ellipsis; 
+    -webkit-text-overflow: ellipsis; 
     display:-webkit-box;
     -webkit-box-orient:vertical;
     -webkit-line-clamp:2;
@@ -281,6 +286,11 @@ img{
     line-height: 26px;
     font-size: 12px;
     border-radius: 15px;
+    -moz-border-radius: 15px;   
+    -webkit-border-radius: 15px; 
+    -o-border-radius: 15px; 
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = #64b0fd, endColorstr = #007fff);  
+    overflow: hidden;
     background: linear-gradient(to right,#64b0fd,#007fff);
     margin: 30px auto;
     cursor: pointer;
@@ -319,6 +329,9 @@ img{
     line-height: 30px;
     color: #fff;
     border-radius: 15px;
+    -moz-border-radius: 15px;   
+    -webkit-border-radius: 15px; 
+    -o-border-radius: 15px; 
     margin: 0 auto;
     cursor: pointer;
     background: linear-gradient(to right,#64b0fd,#007fff);
