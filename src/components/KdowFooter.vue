@@ -4,7 +4,7 @@
 		    <!-- <div class="footerImg">
 		    	<img src="../../static/images/footer.jpg"/>
 		    </div> -->
-            <div class="footer-con">
+            <div class="footer-con"  :style="{'height': clientHeight + 'px'}">
                 <div class="content">
                     <div>
                         <h1>欢迎与我们联系</h1>
@@ -49,7 +49,7 @@
 
         <!-- 较小块的底部 -->
 
-        <div class="footer-record" v-if="footerShow" id="footer-record">
+        <div v-if="footerShow" id="footer-record">
                 <div class="footer-record-left pull-left">
                     <p>Copyright © 2017觅元素 浙ICP备16007586号-1</p>
                     <p class="text-left">浙公网安备 33010902001056号</p>
@@ -124,6 +124,7 @@
     list-style: none;
 }
 .footer{
+ 
     padding-bottom: 40px;
     width: 100%;
     height: 100%;
@@ -178,6 +179,10 @@
     height: 100%;
 }
 .footer-record{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 50px;
     height: 30px;
    /* margin-top: 10%;*/
 }
