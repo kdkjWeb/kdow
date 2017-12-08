@@ -3,6 +3,7 @@ export default{
         return {
             listIndex: 0,
             footerShow: true,
+            showLoginDialog:false,
             iconColor: 0,
             banner: {
                 src: '../../../static/images/about-banner.jpg',

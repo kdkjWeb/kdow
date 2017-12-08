@@ -22,10 +22,13 @@
 			:style="{
 				'height': clientHeight + 'px'
 			}">
-				<div class="main_shadow col-md-12 " :style="{
-				'height': clientHeight + 'px'}"></div>
+				<div class="main_shadow col-md-12 "
+				style="margin-top: 10px" 
+				:style="{
+					'height': clientHeight + 'px'
+				}"></div>
 
-				<div class="main_content" style="margin-top: 0" ref="main_content" :class="{active:isActive}">
+				<div class="main_content" style="margin-top: 10px" ref="main_content" :class="{active:isActive}">
 					<!-- 第一页 -->
 					<div :style="{
 						'height': clientHeight + 'px',

@@ -1,9 +1,19 @@
 <template>
 	<div class="text-center container-fluid noPadding">
+
+		<!-- 登录弹出框 -->
+		<kdow-login-dialog 
+		:showLoginDialog="showLoginDialog" 
+		@close="(val)=>{showLoginDialog = val}"/>
+		<!-- 登录弹出框 -->
+
+		<!-- 顶部导航栏 -->
 		<div class="header_div">
-			<kdow-header/>
-			<div style="float:clear;"></div>
+			<kdow-header
+			@isNeedToLogin="(val)=>{showLoginDialog = val}"/>
 		</div>
+		<!-- 顶部导航栏 -->
+
 		<div class="container-fluid noPadding" ref="news_banner"> 
 			<div class="col-md-12 col-sm-12 col-xs-12 noPadding">
 				<img src="../../assets/news_banner.png"

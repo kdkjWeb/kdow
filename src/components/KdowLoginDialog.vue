@@ -100,13 +100,16 @@
 						hiddenLabel: true,
 						isRadiusInput: true,
 						icon: '/static/login/user_ico.png',
-						placeHolder: "请输手机号或者邮箱",
+						placeHolder: "请输手机号",
 						validator(data){
+							console.log(data)
+							let phoneReg = /(^1[3|4|5|7|8]\d{9}$)|(^09\d{8}$)/;
 							if(!data){
 								return "请输入用户名";
 							}
-							console.log(data);
-							//手机/邮箱 reg验证
+							if(!phoneReg.test(data)){
+								return "请输入正确的手机号"
+							}
 							
 							return true
 						}
@@ -129,7 +132,7 @@
 						hiddenLabel: true,
 						isRadiusInput: true,
 						icon: '/static/login/user_ico.png',
-						placeHolder: "填写常用手机号或者邮箱",
+						placeHolder: "填写常用手机号",
 						validator: (model)=>{
 							let phoneReg = /(^1[3|4|5|7|8]\d{9}$)|(^09\d{8}$)/;
 							let emailReg = new RegExp(
@@ -138,7 +141,7 @@
 							if(phoneReg.test(model) || emailReg.test(model)){
 								return true;
 							}else{
-								return "请输入正确的手机号或者邮箱";
+								return "请输入正确的手机号";
 							}
 						}
 					},{
@@ -158,48 +161,63 @@
 						isRadiusInput: true,
 						icon: '/static/login/pwd_ico.png',
 						placeHolder: "请再次确认密码"
-					}
-					// {   不要删，以后可能会用到
-					// 	id: "verificationCode",
-					// 	name: "验证码",
-					// 	type: "string",
-					// 	displayPage: 1,
-					// 	hiddenLabel: true,
-					// 	half: true,
-					// 	placeHolder: "请输入验证码",
-					// 	afterBtn: {
-					// 		name: "点击获取",
-					// 		clickFunc: (data) =>{
-					// 			let timer, awaitTime = 60;
+					},
+					{   //不要删，以后可能会用到
+						id: "muser",
+						name: "验证码",
+						type: "string",
+						displayPage: 1,
+						hiddenLabel: true,
+						isRadiusInput: true,
+						half: true,
+						placeHolder: "请输入验证码",
+						afterBtn: {
+							name: "点击获取",
+							clickFunc: (data) =>{
+								let phoneReg = /(^1[3|4|5|7|8]\d{9}$)|(^09\d{8}$)/,
+									timer, 
+									awaitTime = 60;
 
-					// 			/*执行后台请求*/
+								if(!phoneReg.test(data.username)){
+									return this.$toast("请输入正确的手机号")
+								}
+
+								/*执行后台请求*/
+								this.$axios.post('user/verification', {
+									username: data.username
+								})
+								.then(res=>{
+									this.$set(this.registerForm.definition[3].afterBtn,
+									 'disabled',
+									  true);
+									this.$set(this.registerForm.definition[3].afterBtn,
+									 'name',
+									  awaitTime + 's后再试');
+									timer = setInterval(()=>{
+										awaitTime --;
+										if(awaitTime > 0){
+											this.$set(this.registerForm.definition[3].afterBtn,
+											 'name',
+											  awaitTime + 's后再试');
+										}else{
+											clearInterval(timer);
+											this.$set(this.registerForm.definition[3].afterBtn,
+												'disabled',
+												false);
+											this.$set(this.registerForm.definition[3].afterBtn,
+												'name',
+												'获取验证码')
+										}
+										
+									}, 1000)
+								})
+								.catch(err=>{
+									this.$toast("请求超时了请检查网络")
+								})
 								
-					// 			this.$set(this.registerForm.definition[2].afterBtn,
-					// 			 'disabled',
-					// 			  true);
-					// 			this.$set(this.registerForm.definition[2].afterBtn,
-					// 			 'name',
-					// 			  awaitTime + 's后再试');
-					// 			timer = setInterval(()=>{
-					// 				awaitTime --;
-					// 				if(awaitTime > 0){
-					// 					this.$set(this.registerForm.definition[2].afterBtn,
-					// 					 'name',
-					// 					  awaitTime + 's后再试');
-					// 				}else{
-					// 					clearInterval(timer);
-					// 					this.$set(this.registerForm.definition[2].afterBtn,
-					// 						'disabled',
-					// 						false);
-					// 					this.$set(this.registerForm.definition[2].afterBtn,
-					// 						'name',
-					// 						'获取验证码')
-					// 				}
-									
-					// 			}, 1000)
-					// 		}
-					// 	}
-					// }
+							}
+						}
+					}
 					],
 					model: {
 						agreement: false
@@ -222,13 +240,25 @@
 					console.log(res);
 					if(res.data.code == 0){
 						//登录成功
+						sessionStorage.setItem("user",JSON.stringify(res.data.data))
+						this.$store.commit('setUser', res.data.data)
+						if(res.data.data.ispart == 0){
+							this.$router.push({
+								path: '/personalCenter'
+							})
+						}else{
+							this.$router.push({
+								path: '/backStageManage'
+							})
+						}
 					}else{
 						this.$toast(res.data.msg)
 					}
 					
 				})
 				.catch((err)=>{
-					console.log(err)
+					this.$store.commit('done');
+					this.$toast('请求超时了请检查网络');
 				})
 			},
 			register() {
@@ -252,13 +282,17 @@
 					this.$store.commit('done');
 					if(res.data.code == 0){
 						//注册成功
-						
+						sessionStorage.setItem("user",JSON.stringify(res.data.data))
+						this.$store.commit('setUser', res.data.data)
+						this.$router.push({
+							path: '/personalCenter'
+						})
 					}else{
 						this.$alert(res.data.msg);
 					}
 				})
 				.catch((err)=>{
-					this.$toast(err);
+					this.$toast('请求超时了请检查网络');
 				})
 			},
 			close() {

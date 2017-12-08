@@ -6,6 +6,7 @@ export default{
         return {
             isFooter: false,
             footerShow: true,
+            showLoginDialog: false,
             tabIndex: 2,
             teamIndex:2,
             lastIndex:0,

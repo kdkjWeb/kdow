@@ -17,8 +17,9 @@ export default {
 						if(!data){
 							return "请输入用户名";
 						}
-						console.log(data);
-						//手机/邮箱 reg验证
+						if(!phoneReg.test(data)){
+							return "请输入正确的手机号"
+						}
 						
 						return true
 					}

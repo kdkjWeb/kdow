@@ -3,13 +3,17 @@
     	<!--导航-->
     	<div>
     		<div class="header_div">
-			<kdow-header/>
-			<div style="float:clear;"></div>
-			
+    			<kdow-header
+                @isNeedToLogin="(val)=>{showLoginDialog = val}"/>
 			</div>
 			<div id="nav"></div>
     	</div>
     	
+        <!-- 登录弹出框 -->
+        <kdow-login-dialog 
+        :showLoginDialog="showLoginDialog" 
+        @close="(val)=>{showLoginDialog = val}"/>
+        <!-- 登录弹出框 -->
     	
         <!-- banner图开始 -->
         <div class="container-fluid about-top">

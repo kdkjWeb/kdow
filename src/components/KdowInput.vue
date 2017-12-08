@@ -457,7 +457,7 @@
 .loginInput{
   border: 1px solid #ccc;
   border-radius: 20px;
-  margin-top: 24px;
+  margin-top: 10px;
   width: 260px;
 }
 div{

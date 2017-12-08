@@ -33,7 +33,8 @@
 				src="/static/index/1/nav_bg.png"/>
 				</router-link>
 				<transition name="nav_children_fade">
-					<ul class="nav_children" v-if="nav.showChild && nav.children && nav.children.length > 0">
+					<ul class="nav_children" 
+					v-if="nav.showChild && nav.children && nav.children.length > 0">
 						<li v-for="(child, index) in nav.children"
 							:key="child.title"
 							:style="{
@@ -56,10 +57,11 @@
 			</li>
 			<li class="nav_search" style="padding:7.5px 0;width:auto;">
 				<router-link to="" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-				<img src="/static/index/1/search_btn.png">
+					<img src="/static/index/1/search_btn.png">
 				</router-link>
 				<div class="dropdown-menu nav_search_div">
-					<div class="nav_search_ico" :class="css.nav_ico_bg || 'nav_children_ico_defaultBg'"></div>
+					<div class="nav_search_ico" 
+					:class="css.nav_ico_bg || 'nav_children_ico_defaultBg'"></div>
 					<div class="nav_search_input col-xs-12">	
 						<input class="col-xs-10" type="text" placeholder="请输入..." />
 						<button class="col-xs-2"></button>
@@ -70,23 +72,31 @@
 			</li>
 			<li class="nav_user text-center" style="padding:2.5px 0;width:auto; margin-right:80px">
 				<router-link to="" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-				<img src="/static/index/1/user_btn.png" @click="isNeedToLogin">
+					<img src="/static/index/1/user_btn.png" 
+				@click="isNeedToLogin">
 				</router-link>
-				<ul class="dropdown-menu" style="border:none" v-if="false">
+				<ul class="dropdown-menu" style="border:none" v-if="user">
 					<li style="width:0; height:0;" class="nav_user_ico"
 					:class="css.nav_ico_bg || 'nav_children_ico_defaultBg'"></li>
-					<li class="text-left nav_user_link" style="padding: 0 10px;"><router-link to="/" style="border-bottom:1px solid #ccc;">
-						<img src="/static/index/1/1_ico.png">
-						<span>我的作品</span>
-					</router-link></li>
-					<li class="text-left nav_user_link" style="padding: 0 10px"><router-link to="/" style="border-bottom:1px solid #ccc;">
-						<img src="/static/index/1/2_ico.png">
-						<span>我的资料</span>
-					</router-link></li>
-					<li class="text-left nav_user_link" style="padding: 0 10px"><router-link to="/">
-						<img src="/static/index/1/3_ico.png">
-						<span>退出</span>
-					</router-link></li>
+					<li class="text-left nav_user_link" style="padding: 0 10px;">
+						<router-link to="/personalCenter" style="border-bottom:1px solid #ccc;">
+							<img src="/static/index/1/1_ico.png">
+							<span>我的作品</span>
+						</router-link>
+					</li>
+					<li class="text-left nav_user_link" style="padding: 0 10px">
+						<router-link to="/myProfile" style="border-bottom:1px solid #ccc;">
+							<img src="/static/index/1/2_ico.png">
+							<span>我的资料</span>
+						</router-link>
+					</li>
+					<li class="text-left nav_user_link" style="padding: 0 10px">
+						<a href="javascript:void(0)"
+						@click="logout">
+							<img src="/static/index/1/3_ico.png">
+							<span>退出</span>
+						</a>
+					</li>
 					<li class="nav_user_shadow"
 					:class="css.nav_shadow_bg || 'nav_shadow_bg'"></li>
 				</ul>
@@ -101,6 +111,7 @@
 export default {
 	data() {
 		return {
+			user: {},
 			nav_li:[{
 				link: "/",
 				title: "首页"
@@ -144,7 +155,16 @@ export default {
 		},
 		isNeedToLogin() {
 			// 检测用户是否登录, 登录则显示下方ul, 未登录则显示登录弹窗.
-			this.$emit('isNeedToLogin', true);//需要登录
+			if(!this.user){
+				this.$emit('isNeedToLogin', true);//需要登录
+			}
+		},
+		logout() {
+			sessionStorage.removeItem("user")
+			this.user = null
+			this.$router.push({
+				path: '/'
+			})
 		}
 	},
 	mounted() {
@@ -155,6 +175,7 @@ export default {
 				break;
 			}
 		}
+		this.user = JSON.parse(sessionStorage.getItem('user'))
 	}
 }
 </script>

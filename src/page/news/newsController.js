@@ -2,6 +2,7 @@ export default {
 	data() {
 		return {
 			footerShow: true,
+			showLoginDialog: false,
 			searchModel: {
 				current: 1,
 				pageSize: 4,

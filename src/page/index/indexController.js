@@ -531,8 +531,5 @@ export default{
 		this.clientWidth = `${document.body.clientWidth}`;
 
 		this.$refs.main.scrollTop = 10;
-		this.$refs.main.style.marginTop = '10px'
-
-		// document.body.style.overflow='hidden';
 	}
 }
