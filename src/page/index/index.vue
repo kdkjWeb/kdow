@@ -46,7 +46,7 @@
 						:style="{
 							'left': clientWidth > 1205?((clientWidth - 1205 )/ 2) + 'px': 0
 						}">
-							<div class="main_content_page2_carousel" style="margin-left:0;height:605px" ref="main_carousel">
+							<div class="main_content_page2_carousel" style="margin-left:0;height: 17%;" ref="main_carousel">
 								<div v-for="(cs, index) in carousel.definition"
 								class="main_content_page2_carousel_div"
 								:key="cs.workName"
@@ -68,7 +68,8 @@
 								</div>
 							</div>
 							<div class="main_content_page2_more text-right">
-								<img src="/static/index/tool/more.png">
+								<img src="/static/index/tool/more.png"
+									 style="cursor:pointer;">
 							</div>
 						</div>
 						<div class="carousel_preBtn carousel_btn" @click="preCarousel">
@@ -85,45 +86,62 @@
 						'background-color': '#222',
 						'overflow':'hidden'
 					}">
-						<div class="container">
-							<div class="row rowThree" :class="{active:isActive}">
-								<div class="col-md-offset-1 col-md-6">
-									<div class="main_content_page3_human">
+						<div class="container" >
+							<div class="row rowThree main_content_page3" 
+							:class="{active:isActive}">
+								<div class="col-md-offset-1 col-md-6"
+								style="height:100%"
+								ref="page3_left">
+									<div class="main_content_page3_human"
+									ref="page3_human">
 										<img src="/static/index/3/human.jpg" width="100%">
 									</div>
 									<div class="main_content_page3_leftTxt">
-										<div class="main_content_page3_leftTxt_title">
+										<div class="main_content_page3_leftTxt_title"
+										ref="page3_left_title">
 											<img src="/static/index/3/english.png">
 										</div>
-										<p style="width:60%" class="main_content_page3_leftTxt_content">
+										<p style="width:60%" 
+										class="main_content_page3_leftTxt_content"
+										ref="page3_left_content">
 											AFHwa Eawrou <br/>
 											wqruwu Efihwd jHWASDkjn ASDF wqesdkjn Efdsfkjn jHdasdn dssdfk
 											d sdth shei svnslkj dalsdkasdsd. ajnsdaeqwoeij dmakls maskdqoweij asdmk mcmdk.
 										</p>
-										<div class="main_content_page3_leftTxt_btn">
+										<div class="main_content_page3_leftTxt_btn"
+										ref="page3_left_btn">
 											<span>更多</span>
 											<img src="/static/index/3/news_btn_ico.png">
 										</div>
 									</div>
-									<div class="main_content_page3_rectangle">
+									<div class="main_content_page3_rectangle"
+									ref="page3_rectangle">
 										<img src="/static/index/3/rectangle.png" width="30%">
 									</div>
 									
 								</div>
-								<div class="col-md-5 main_content_page3_right">
+								<div class="col-md-5 main_content_page3_right"
+								ref="page3_right">
 									<div class="main_content_page3_rightImg">
-										<img src="/static/index/3/news_img.jpg" width="100%">
-										<router-link 
+										<img src="/static/index/3/news_img.jpg" 
+										width="100%"
+										ref="page3_right_img">
+										<a 
 										class="main_content_page3_right_btn" 
-										style="top:41%"
-										to="">
+										style="top:46%"
+										href=""
+										ref="page3_right_topBtn">
 											<span>更多</span>
 											<img src="/static/index/3/news_btn_ico.png">
-										</router-link>
+										</a>
 									</div>
-									<div class="main_content_page3_right_content">
-										<div class="main_content_page3_right_content_shadow"></div>
-										<div class="main_content_page3_right_content_main" style="overflow-y:scroll">
+									<div class="main_content_page3_right_content"
+									ref="page3_right_content">
+										<div class="main_content_page3_right_content_shadow"
+										ref="page3_right_shadow"></div>
+										<div class="main_content_page3_right_content_main" 
+										style="overflow-y:scroll"
+										ref="page3_right_txt">
 											<ul>
 												<li>这是一条公告内容,巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉</li>
 												<li>这是一条公告内容,巴拉巴拉巴拉巴拉巴拉巴拉</li>
@@ -140,13 +158,14 @@
 												<li>这是一条公告内容,巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉</li>
 											</ul>
 										</div>
-										<router-link 
+										<a 
 										class="main_content_page3_right_btn" 
-										style="bottom:8%;right:4%"
-										to="">
+										style="bottom:8%;"
+										to=""
+										ref="page3_right_bottomBtn">
 											<span>更多</span>
 											<img src="/static/index/3/news_btn_ico.png">
-										</router-link>
+										</a>
 									</div>
 								</div>
 							</div>
@@ -156,18 +175,27 @@
 					<!-- 第四页 -->
 
 					<!-- 邓 -->
-					<div class="company_infor rowFour" :style="{ 'height': clientHeight + 'px' }" :class="{activeTwo:isActiveTwo}">
-						<div :style="{ 'height': clientHeight / 2 + 'px' }" class="company_infor_top">
+					<div 
+					class="company_infor rowFour"
+					ref="page4_main" 
+					:style="{ 'height': clientHeight + 'px' }" 
+					:class="{activeTwo:isActiveTwo}">
+						<div 
+						:style="{ 'height': clientHeight / 2 + 'px' }" 
+						class="company_infor_top">
 							<div class="ci_top_box">
-								<div :style="{ 'height': clientHeight / 4 + 68 + 'px' }" 
+								<div 
+								:style="{ 'height': clientHeight / 4 + 68 + 'px' }" 
 								class="logo_box">
 									<img src="/static/index/4/01.png" 
 									width="100%" 
+									ref="page4_logo"
 									:style="{ 
 										'margin-top': clientHeight / 4 - 68 + 'px',
 									    'margin-left': '0px' }">
 								</div>
-								<div class="top_describe">
+								<div class="top_describe"
+								ref="page4_topDescription">
 									<ul>
 										<li class="desc_text">超越</li>
 										<li class="desc_sg">|</li>
@@ -178,17 +206,22 @@
 										<li class="desc_text">视觉</li>
 									</ul>
 								</div>
-								<div class="top_hg"></div>
+								<div class="top_hg"
+								ref="page4_topHg"></div>
 							</div>
 						</div>
 						<div :style="{ 
 							'height': clientHeight / 2 + 'px' }" 
 							class="company_infor_contain">
 							 <div class="ci_contain_center">
-							 	<div class="center_title">公司</div>
-							 	<div class="center_title_Eg">ADUHF</div>
-							 	<div class="center_describe">不忘初心，方得始终。中国共产党人的初心和使命，就是为中国人民谋幸福，为中华民族谋复兴。这个初心和使命是激励中国共产党人不断前进的根本动力。全党同志一定要永远与人民同呼吸、共命运、心连心，永远把人民对美好生活的向往作为奋斗目标，以永不懈怠的精神状态和一往无前的奋斗姿态，继续朝着实现中华民族伟大复兴的宏伟目标奋勇前进</div>
-							 	<div class="more_about">
+							 	<div class="center_title"
+							 	ref="page4_title">公司</div>
+							 	<div class="center_title_Eg"
+							 	ref="page4_about">ADUHF</div>
+							 	<div class="center_describe"
+							 	ref="page4_desciption">不忘初心，方得始终。中国共产党人的初心和使命，就是为中国人民谋幸福，为中华民族谋复兴。这个初心和使命是激励中国共产党人不断前进的根本动力。全党同志一定要永远与人民同呼吸、共命运、心连心，永远把人民对美好生活的向往作为奋斗目标，以永不懈怠的精神状态和一往无前的奋斗姿态，继续朝着实现中华民族伟大复兴的宏伟目标奋勇前进</div>
+							 	<div class="more_about"
+							 	ref="page4_moreBtn">
 									<img src="/static/index/4/04.png" height="100%">
 								</div>
 							 </div>
@@ -257,6 +290,9 @@
 </style>
 
 <style scoped="">
+.container{
+	height: 100%;
+}
 
 /**
  * 右边导航栏
@@ -282,6 +318,9 @@
 	width: 10px;
 	height: 10px;
 	position: relative;
+	box-shadow: 0px 0px 10px #ccc;
+	-moz-box-shadow: 0px 0px 10px #ccc;
+	-webkit-box-shadow: 0px 0px 10px #ccc;
 }
 .main_right_nav ul li span{
 	position: absolute;
@@ -327,15 +366,21 @@
 .main_content_page2_main{
 	width: 1205px;
 	position: absolute;
-	top: 23%;
+	height: 100%;
+	/*display: flex;
+	flex-direction: row;*/
+	top: 20%;
 	overflow: hidden;
 }
 .main_content_page2_carousel{
 	width: 2400px;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
 	transition: all .5s;
 }
 .main_content_page2_carousel div{
-	width: 13%;
+	width: 14%;
 	height: 70%;
 	margin: 0 20px;
 	display: inline-block;
@@ -432,7 +477,7 @@
 	transform: translateX(-200px);
 	transition: all .5s;
 }*/
-.rowThree .col-md-6{
+/*.rowThree .col-md-6{
 	opacity: 0;
 	transition: all 3s; 
 }
@@ -496,46 +541,55 @@
     60%{opacity:1;transform:translateX(-30px);}
     80%{transform:translateX(10px);}
     100%{transform:translateX(0);}
-}
+}*/
 
 .main_content_page3_human{
-	height: 300px;
-
+	position: relative;
 }
-.main_content_page3_human img{
-	height: 420px;
+.main_content_page3_leftTxt_title{
+	position: relative;
+}
+.main_content_page3_leftTxt_content{
+	position: relative;
+}
+
+.main_content_page3{
+	height: 100%;
 }
 .main_content_page3_rectangle{
 	opacity: .6;
 	position: relative;
-	bottom: -100px;
 	left:  10%;
 }
 .main_content_page3_leftTxt{
 	position: absolute;
-	top:  75%;
+	top:  60%;
 	color: #fff;
 }
 .main_content_page3_leftTxt_btn{
 	display: inline-block;
 	border: 1px solid #fff;
 	padding:  5px 25px;
+	position: relative;	
 }
 .main_content_page3_right{
 	position: absolute;
 	right: 7%;
-	top: 13%;
+	/*top: 13%;*/
+	height: 100%;
+}
+.main_content_page3_rightImg{
+	margin-top: 20%;
 }
 .main_content_page3_right_btn{
 	color: #fff;
 	padding: 2px 15px;
 	border: 1px solid #fff;
 	position: absolute;
-	right:  6%;
 }
 .main_content_page3_right_content{
 	position: relative;
-	height: 308px;
+	height: 40%;
 	background:  url('/static/index/3/news_border.png') no-repeat 40px 180px;
 }
 .main_content_page3_right_content_shadow{
@@ -627,7 +681,7 @@
 
 /* 邓 */
 /*第四页动画*/
-.rowFour .logo_box img{
+/*.rowFour .logo_box img{
 	opacity: 0;
 	transition: All 3s ease-in-out;
     -webkit-transition: All 3s ease-in-out;
@@ -698,7 +752,7 @@
 @keyframes fadeinL{
     0%{opacity:0;transform:translateX(-100px);}
     100%{opacity:1;transform:translateX(0);}
-}
+}*/
 
 .company_infor{
 	width: 100%;
@@ -719,6 +773,7 @@
 	height: 30px;
 	line-height: 30px;
 	margin: 45px auto 0px;
+	position: relative;
 }
 .top_describe li{
 	float: left;
@@ -742,6 +797,7 @@
 	width: 20px;
 	background: #71cfff;
 	margin: 15px auto 0px;
+	position: relative;
 }
 
 .company_infor_contain{
@@ -761,6 +817,7 @@
 	font-size: 18px;
 	font-weight: bold;
 	font-family: 微软雅黑;
+	position: relative;
 }
 .center_title_Eg{
 	height: 30px;
@@ -768,6 +825,7 @@
 	text-align: center;
 	width: 200px;
 	font-size: 17px;
+	position: relative;
 }
 .center_describe{
 	line-height: 26px;
@@ -775,12 +833,14 @@
 	text-align: center;
 	font-family: 微软雅黑;
 	margin: 18px 0px 30px;
+	position: relative;
 }
 .more_about{
 	height: 50px;
 	width: 105px;
 	margin: 0 auto;
 	cursor: pointer;
+	position: relative;
 }
 /*@keyframes fiveShow{
     0%{transform:scale(1);}
