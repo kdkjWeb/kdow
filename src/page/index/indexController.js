@@ -25,41 +25,42 @@ export default{
 			},{
 				title: "联系我们 —"
 			},],
-			firstPageContent: "/static/index/1/01.jpg",
+			firstPageContent: "../static/index/1/01.jpg",
 			carousel: {
 				currentPage: 1,
 				definition:[{
-					img: '/static/index/2/1.jpg',
+					img: '../../static/index/2/1.jpg',
 					workName: '作品名称',
-					description: '作品简介康师傅电话客服看到内UC护理费那两件东西看着你开',
+					description: '这是一个样本作品,不是一个真正的作品',
 					ad: '广告词什么的'
 				},{
-					img: '/static/index/2/2.jpg',
+					img: '../../static/index/2/2.jpg',
 					workName: '作品名称',
-					description: '作品简介康师傅电话客服看到内UC护理费那两件东西看着你开',
+					description: '这是一个样本作品,不是一个真正的作品',
 					ad: '广告词什么的'
 				},{
-					img: '/static/index/2/3.jpg',
+					img: '../../static/index/2/3.jpg',
 					workName: '作品名称',
-					description: '作品简介康师傅电话客服看到内UC护理费那两件东西看着你开',
+					description: '这是一个样本作品,不是一个真正的作品',
 					ad: '广告词什么的'
 				},{
-					img: '/static/index/2/1.jpg',
+					img: '../../static/index/2/1.jpg',
 					workName: '作品名称',
-					description: '作品简介康师傅电话客服看到内UC护理费那两件东西看着你开',
+					description: '这是一个样本作品,不是一个真正的作品',
 					ad: '广告词什么的'
 				},{
-					img: '/static/index/2/2.jpg',
+					img: '../../static/index/2/2.jpg',
 					workName: '作品名称',
-					description: '作品简介康师傅电话客服看到内UC护理费那两件东西看着你开',
+					description: '这是一个样本作品,不是一个真正的作品',
 					ad: '广告词什么的'
 				},{
-					img: '/static/index/2/3.jpg',
+					img: '../../static/index/2/3.jpg',
 					workName: '作品名称',
-					description: '作品简介康师傅电话客服看到内UC护理费那两件东西看着你开',
+					description: '这是一个样本作品,不是一个真正的作品',
 					ad: '广告词什么的'
 				}]
 			},
+			news:[]
 		}
 	},
 	methods:{
@@ -534,7 +535,6 @@ export default{
 				}
 			})
 			.then(res=>{
-				console.log(res)
 				//获取轮播图
 			})
 			.catch(err=>{
@@ -549,7 +549,13 @@ export default{
 				}
 			})
 			.then(res=>{
-				console.log(res)
+				if(res.data.code === 0){
+					this.news = res.data.data.list
+					// for(let elem of res.data.data.list.values()){
+					// 	this.carousel.definition.push(elem)
+					// }
+					
+				}
 				//获取新闻信息
 			})
 			.catch(err=>{
@@ -562,6 +568,9 @@ export default{
 	mounted() {
 		this.clientHeight = `${document.body.clientHeight}`;
 		this.clientWidth = `${document.body.clientWidth}`;
+
+		this.searchCarsouls()
+		this.searchNews()
 
 		this.$refs.main.scrollTop = 10;
 	}

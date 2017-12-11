@@ -34,8 +34,8 @@
                 </div>
                 <div class="footer-record">
                         <div class="footer-record-left pull-left">
-                            <p>Copyright © 2017觅元素 浙ICP备16007586号-1</p>
-                            <p class="text-left">浙公网安备 33010902001056号</p>
+                            <!-- <p>Copyright © 2017觅元素 浙ICP备16007586号-1</p>
+                            <p class="text-left">浙公网安备 33010902001056号</p> -->
                         </div>
                         <div class="footer-record-right pull-right">
                             <ul>
@@ -51,8 +51,8 @@
 
         <div v-if="footerShow" id="footer-record">
                 <div class="footer-record-left pull-left">
-                    <p>Copyright © 2017觅元素 浙ICP备16007586号-1</p>
-                    <p class="text-left">浙公网安备 33010902001056号</p>
+                   <!--  <p>Copyright © 2017觅元素 浙ICP备16007586号-1</p>
+                    <p class="text-left">浙公网安备 33010902001056号</p> -->
                 </div>
                 <div class="footer-record-right pull-right">
                     <ul>
@@ -83,11 +83,11 @@
                 footerList:[
                 {
                 title: '地址',
-                title1: 'ADDRESS',
+                title1: '成都科技节能大厦A座702',
                 iconClass: 'icon-icon-yxj-address'},
                 {
                 title: '电话',
-                title1: 'TELEPHONE',
+                title1: '13748211356',
                 iconClass: 'icon-icon32206'},
                 {
                 title: '邮箱',
@@ -122,6 +122,7 @@
 }
 .company-profile-con li{
     list-style: none;
+    cursor: pointer;
 }
 .footer{
  

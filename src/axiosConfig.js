@@ -7,7 +7,7 @@ axios.defaults.withCredentials = true
 // axios.defaults.baseURL = 'http://192.168.20.122:8088/kdkjgw/' //周庭兆
  // axios.defaults.baseURL = 'http://192.168.20.3:8080/kdkjgw/'//张新川
 // axios.defaults.baseURL = 'http://192.168.20.2:8888/kdkjgw/'//田涛银
-axios.defaults.baseURL = 'http://192.168.20.8:8080/kdkjgw/'//林晨旭
+axios.defaults.baseURL = 'http://192.168.20.111:8080/kdkjgw/'//林晨旭
 
 
 // axios.defaults.headers['Content-Type'] ='application/x-www-form-urlencoded;charset=UTF-8'

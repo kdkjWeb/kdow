@@ -182,34 +182,36 @@
 									return this.$toast("请输入正确的手机号")
 								}
 
+								this.$set(this.registerForm.definition[3].afterBtn,
+								 'disabled',
+								  true);
+								this.$set(this.registerForm.definition[3].afterBtn,
+								 'name',
+								  awaitTime + 's后再试');
+								timer = setInterval(()=>{
+									awaitTime --;
+									if(awaitTime > 0){
+										this.$set(this.registerForm.definition[3].afterBtn,
+										 'name',
+										  awaitTime + 's后再试');
+									}else{
+										clearInterval(timer);
+										this.$set(this.registerForm.definition[3].afterBtn,
+											'disabled',
+											false);
+										this.$set(this.registerForm.definition[3].afterBtn,
+											'name',
+											'获取验证码')
+									}
+									
+								}, 1000)
+
 								/*执行后台请求*/
 								this.$axios.post('user/verification', {
 									username: data.username
 								})
 								.then(res=>{
-									this.$set(this.registerForm.definition[3].afterBtn,
-									 'disabled',
-									  true);
-									this.$set(this.registerForm.definition[3].afterBtn,
-									 'name',
-									  awaitTime + 's后再试');
-									timer = setInterval(()=>{
-										awaitTime --;
-										if(awaitTime > 0){
-											this.$set(this.registerForm.definition[3].afterBtn,
-											 'name',
-											  awaitTime + 's后再试');
-										}else{
-											clearInterval(timer);
-											this.$set(this.registerForm.definition[3].afterBtn,
-												'disabled',
-												false);
-											this.$set(this.registerForm.definition[3].afterBtn,
-												'name',
-												'获取验证码')
-										}
-										
-									}, 1000)
+									
 								})
 								.catch(err=>{
 									this.$toast("请求超时了请检查网络")

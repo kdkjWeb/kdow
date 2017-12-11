@@ -195,6 +195,7 @@ img{
     height: 100%;
     outline: none;
     opacity: 0;
+    cursor: pointer;
 }
 .upclick{
     position: absolute;

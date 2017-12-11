@@ -22,7 +22,7 @@
 			:style="{
 				'height': clientHeight + 'px'
 			}">
-				<div class="main_shadow col-md-12 "
+				<div class="main_shadow col-md-12 col-sm-12 col-xs-12"
 				style="margin-top: 10px" 
 				:style="{
 					'height': clientHeight + 'px'
@@ -74,8 +74,11 @@
 								</div>
 							</div>
 							<div class="main_content_page2_more text-right">
-								<img src="/static/index/tool/more.png"
+								<a href="#/productShow" title="">
+									<img src="/static/index/tool/more.png"
 									 style="cursor:pointer;">
+								</a>
+								
 							</div>
 						</div>
 						<button class="carousel_preBtn carousel_btn" @click="preCarousel">
@@ -116,8 +119,8 @@
 										</p>
 										<div class="main_content_page3_leftTxt_btn"
 										ref="page3_left_btn">
-											<span>更多</span>
-											<img src="/static/index/3/news_btn_ico.png">
+											<!-- <span>更多</span>
+											<img src="/static/index/3/news_btn_ico.png"> -->
 										</div>
 									</div>
 									<div class="main_content_page3_rectangle"
@@ -137,8 +140,8 @@
 										style="top:46%"
 										href=""
 										ref="page3_right_topBtn">
-											<span>更多</span>
-											<img src="/static/index/3/news_btn_ico.png">
+											<!-- <span>更多</span>
+											<img src="/static/index/3/news_btn_ico.png"> -->
 										</a>
 									</div>
 									<div class="main_content_page3_right_content"
@@ -148,26 +151,25 @@
 										<div class="main_content_page3_right_content_main" 
 										style="overflow-y:scroll"
 										ref="page3_right_txt">
-											<ul>
-												<li>这是一条公告内容,巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉</li>
-												<li>这是一条公告内容,巴拉巴拉巴拉巴拉巴拉巴拉</li>
-												<li>这是一条公告内容,巴拉巴拉巴拉巴拉巴拉巴拉</li>
-												<li>这是一条公告内容,巴拉巴拉巴拉巴拉巴拉巴拉</li>
-												<li>这是一条公告内容,巴拉巴拉巴拉巴拉巴拉巴拉</li>
-												<li>这是一条公告内容,巴拉巴拉巴拉巴拉巴拉巴拉</li>
-												<li>这是一条公告内容,巴拉巴拉巴拉巴拉巴拉巴拉</li>
-												<li>这是一条公告内容,巴拉巴拉巴拉巴拉巴拉巴拉</li>
-												<li>这是一条公告内容,巴拉巴拉巴拉巴拉巴拉巴拉</li>
-												<li>这是一条公告内容,巴拉巴拉巴拉巴拉巴拉巴拉</li>
-												<li>这是一条公告内容,巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉</li>
-												<li>这是一条公告内容,巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉</li>
-												<li>这是一条公告内容,巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉</li>
+											<ul v-if="news.length > 0">
+												<li v-for="nw in news"
+												:key="nw.title">
+													<a class="col-md-10 col-sm-10 col-xs-10 noPadding"
+													 v-text="nw.content"
+													 :href="'#/newsDetail'"
+													 style="color:#fff"></a>
+													<span class="col-md-2 col-sm-10 col-xs-10 noPadding" v-text="nw.pdate"></span>
+												</li>
+												
+											</ul>
+											<ul v-else>
+												<li style="font-size: 25px;text-align:center;font-weight: 100">咱暂时没啥新闻哟~</li>
 											</ul>
 										</div>
 										<a 
 										class="main_content_page3_right_btn" 
-										style="bottom:8%;"
-										to=""
+										style="bottom:8%;border:1px solid #fff;"
+										href="#/news"
 										ref="page3_right_bottomBtn">
 											<span>更多</span>
 											<img src="/static/index/3/news_btn_ico.png">
@@ -344,7 +346,7 @@
 }
 
 .main{
-	background: url("../../assets/main_bg.jpg") no-repeat 100% 100%;
+	background: url("../../../static/index/1/main_bg.jpg") no-repeat 100% 100%;
 	overflow: auto !important;
 }
 .main_shadow{
@@ -514,12 +516,11 @@
 }
 .main_content_page3_leftTxt{
 	position: absolute;
-	top:  60%;
+	bottom:  6%;
 	color: #fff;
 }
 .main_content_page3_leftTxt_btn{
 	display: inline-block;
-	border: 1px solid #fff;
 	padding:  5px 25px;
 	position: relative;	
 }
@@ -535,7 +536,6 @@
 .main_content_page3_right_btn{
 	color: #fff;
 	padding: 2px 15px;
-	border: 1px solid #fff;
 	position: absolute;
 }
 .main_content_page3_right_content{
