@@ -25,6 +25,7 @@ export default{
 			},{
 				title: "联系我们 —"
 			},],
+			firstPageContent: "/static/index/1/01.jpg",
 			carousel: {
 				currentPage: 1,
 				definition:[{
@@ -78,7 +79,7 @@ export default{
 
 			//初始化下一页的动画效果
 			this.pageAnimationInit(this.currentPage)
-			
+
 			this.$Velocity(this.$refs.main_content, {
 				marginTop: parseInt(this.$refs.main_content.style.marginTop) - this.clientHeight + 'px'
 			},{
@@ -147,7 +148,9 @@ export default{
 			this.$set(this.rightNav[index], 'showTxt', false)
 		},
 		jumpTo(index){
-
+			if(this.isScrolling){
+				return
+			}
 			//执行当前页的离开动画
 			this.pageLeaveAnimating(this.currentPage)
 
@@ -171,8 +174,9 @@ export default{
 				}
 			}
 			this.isScrolling = true
+
 			this.$Velocity(this.$refs.main_content, {
-				marginTop: - this.clientHeight*index + 'px'
+				marginTop: - this.clientHeight*index + 10 + 'px'
 			},{
 				duration: 1000,
 				easing: "ease-in-out",
@@ -521,8 +525,37 @@ export default{
 			},{
 				duration: 500
 			})
-		}
+		},
 
+		searchCarsouls() {
+			this.$axios.get('slider/selectAll',{
+				params:{
+					status: "1"
+				}
+			})
+			.then(res=>{
+				console.log(res)
+				//获取轮播图
+			})
+			.catch(err=>{
+				this.$toast("获取轮播图信息超时了")
+			})
+		},
+		searchNews() {
+			this.$axios.get('news/selectAll',{
+				params:{
+					current: 1,
+					pageSize: 20
+				}
+			})
+			.then(res=>{
+				console.log(res)
+				//获取新闻信息
+			})
+			.catch(err=>{
+				this.$toast("获取新闻信息超时了")
+			})
+		}
 
 
 	},

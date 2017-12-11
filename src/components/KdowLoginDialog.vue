@@ -42,9 +42,9 @@
 									</div>
 									<div class="login_third_party_main" ref="login_third_party_main">
 										<ul>
-											<li><img src="/static/login/qq_ico.png"></li>
-											<li><img src="/static/login/wechat_ico.png"></li>
-											<li><img src="/static/login/sinna_ico.png"></li>
+											<li><img src="/static/login/qq_ico.png" @click="noFeatures"></li>
+											<li><img src="/static/login/wechat_ico.png" @click="noFeatures"></li>
+											<li><img src="/static/login/sinna_ico.png" @click="noFeatures"></li>
 										</ul>
 									</div>
 								</div>
@@ -102,12 +102,12 @@
 						icon: '/static/login/user_ico.png',
 						placeHolder: "请输手机号",
 						validator(data){
-							console.log(data)
 							let phoneReg = /(^1[3|4|5|7|8]\d{9}$)|(^09\d{8}$)/;
 							if(!data){
 								return "请输入用户名";
 							}
-							if(!phoneReg.test(data)){
+
+							if(!phoneReg.test(data) && data != 'admin'){
 								return "请输入正确的手机号"
 							}
 							
@@ -232,12 +232,15 @@
 			}
 		},
 		methods: {
+			noFeatures() {
+				this.$toast("等我们收购了这些公司就可以第三方登录了..")
+			},
 			login() {
 				this.$store.commit('process');
 				this.$axios.post('login', this.loginForm.model)
 				.then((res)=>{
 					this.$store.commit('done');
-					console.log(res);
+
 					if(res.data.code == 0){
 						//登录成功
 						sessionStorage.setItem("user",JSON.stringify(res.data.data))
@@ -547,6 +550,7 @@
     }
     .login_third_party_main ul li{
     	display: inline-block;
+    	cursor: pointer;
     	margin:0 23px;
     }
 

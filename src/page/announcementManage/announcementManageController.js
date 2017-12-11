@@ -147,7 +147,6 @@ export default {
 		 * 查询公告列表
 		 */
 		searchAnnouncementList(searchModel) {
-			console.log(searchModel)
 			this.$store.commit('process')
 			this.$axios.get('notice/selectAll', {
 				params: searchModel
@@ -162,7 +161,6 @@ export default {
 				}
 			})
 			.catch((err)=>{
-				console.log(err)
 				this.$store.commit('done')
 				this.$toast("请求超时了请检查网络")
 			})

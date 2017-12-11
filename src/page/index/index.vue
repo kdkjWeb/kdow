@@ -33,7 +33,10 @@
 					<div :style="{
 						'height': clientHeight + 'px',
 					}">
-					   <img src="/static/index/1/01.jpg" width="100%" height="100%">
+					   <img :src="firstPageContent" 
+						    width="100%" 
+						    height="100%"
+						    ref="firstPageImg">
 					</div>
 
 					<!-- 第二页 -->
@@ -75,12 +78,12 @@
 									 style="cursor:pointer;">
 							</div>
 						</div>
-						<div class="carousel_preBtn carousel_btn" @click="preCarousel">
+						<button class="carousel_preBtn carousel_btn" @click="preCarousel">
 							&lt;
-						</div>
-						<div class="carousel_nextBtn carousel_btn" @click="nextCarousel">
+						</button>
+						<button class="carousel_nextBtn carousel_btn" @click="nextCarousel">
 							&gt;
-						</div>
+						</button>
 					</div>
 					<!-- 第三页 -->
 					<div :style="{
@@ -222,10 +225,12 @@
 							 	<div class="center_title_Eg"
 							 	ref="page4_about">ADUHF</div>
 							 	<div class="center_describe"
-							 	ref="page4_desciption">不忘初心，方得始终。中国共产党人的初心和使命，就是为中国人民谋幸福，为中华民族谋复兴。这个初心和使命是激励中国共产党人不断前进的根本动力。全党同志一定要永远与人民同呼吸、共命运、心连心，永远把人民对美好生活的向往作为奋斗目标，以永不懈怠的精神状态和一往无前的奋斗姿态，继续朝着实现中华民族伟大复兴的宏伟目标奋勇前进</div>
+							 	ref="page4_desciption">恺缔科技，我们不只是一个做软件的公司,更是一家健康、良好、有活力的科技型公司。我们致力于把软件或其余科技型产业做好，并且实现内容的多样化。公司秉承“永续经营，稳步发展，引领科技，以人为本”的理念，通过对资源的充分整合让各成员共享一个互联网+的时代盛宴！</div>
 							 	<div class="more_about"
 							 	ref="page4_moreBtn">
-									<img src="/static/index/4/04.png" height="100%">
+								 	<router-link to="/aboutUs">
+										<img src="/static/index/4/04.png" height="100%">
+									</router-link>
 								</div>
 							 </div>
 						</div>
@@ -403,13 +408,21 @@
 }
 .main_content_page2_carousel div:hover .carousel_btm_img{
 	transform: scale(1.1, 1.1);
+	-ms-transform:scale(1.1, 1.1); 	/* IE 9 */
+	-moz-transform:scale(1.1, 1.1);	/* Firefox */
+	-webkit-transform:scale(1.1, 1.1); /* Safari 和 Chrome */
+	-o-transform:scale(1.1, 1.1); 	/* Opera */
 }
 .main_content_page2_carousel div:hover .carousel_shadow{
 	opacity:  .5;
 }
 .main_content_page2_carousel div:hover .carousel_description{
 	opacity:  1;
-	transform: scale(.9, .9)
+	transform: scale(.9, .9);
+	-ms-transform:scale(.9, .9); 	/* IE 9 */
+	-moz-transform:scale(.9, .9);	/* Firefox */
+	-webkit-transform:scale(.9, .9); /* Safari 和 Chrome */
+	-o-transform:scale(.9, .9); 	/* Opera */
 }
 
 .carousel_description{
@@ -427,7 +440,6 @@
 	-moz-transition: all .5s; /* Firefox 4 */
 	-webkit-transition: all .5s; /* Safari 和 Chrome */
 	-o-transition: all .5s; /* Opera */
-	/*transform: scale(1.1, 1.1)*/
 
 }
 .carousel_description h1, p{
@@ -457,7 +469,13 @@
 	font-weight: 100;
 	top: 32%;
 	transform:scale(1,2);
+	-ms-transform:scale(1,2); 	/* IE 9 */
+	-moz-transform:scale(1,2); 	/* Firefox */
+	-webkit-transform:scale(1,2); /* Safari 和 Chrome */
+	-o-transform:scale(1,2); 	/* Opera */
 	cursor: pointer;
+	border: none;
+	background: none;
 }
 .carousel_preBtn{
 	left: 4%;
@@ -475,76 +493,6 @@
 /*第二页*/
 
 /*第三页*/
-/*第三页动态效果*/
-/*.rowThree .col-md-6{
-	transform: translateX(-200px);
-	transition: all .5s;
-}*/
-/*.rowThree .col-md-6{
-	opacity: 0;
-	transition: all 3s; 
-}
-.rowThree .col-md-5{
-	opacity: 0;
-	transition: all 3s; 
-}
-.active .col-md-6{
-	opacity: 1;
-	animation: bounceinL 3s ease-in-out;
-}
-@-webkit-keyframes bounceinL{
-    0%{opacity:0;-webkit-transform:translateX(-100px);}
-    60%{opacity:1;-webkit-transform:translateX(30px);}
-    80%{-webkit-transform:translateX(-10px);}
-    100%{-webkit-transform:translateX(0);}
-}
-@-moz-keyframes bounceinL{
-    0%{opacity:0;-moz-transform:translateX(-100px);}
-    60%{opacity:1;-moz-transform:translateX(30px);}
-    80%{-moz-transform:translateX(-10px);}
-    100%{-moz-transform:translateX(0);}
-}
-@-ms-keyframes bounceinL{
-    0%{opacity:0;-ms-transform:translateX(-100px);}
-    60%{opacity:1;-ms-transform:translateX(30px);}
-    80%{-ms-transform:translateX(-10px);}
-    100%{-ms-transform:translateX(0);}
-}
-@keyframes bounceinL{
-    0%{opacity:0;transform:translateX(-100px);}
-    60%{opacity:1;transform:translateX(30px);}
-    80%{transform:translateX(-10px);}
-    100%{transform:translateX(0);}
-}
-
-.active .col-md-5{
-	opacity: 1;
-	animation: bounceinR 3s ease-in-out;
-}
-@-webkit-keyframes bounceinR{
-    0%{opacity:0;-webkit-transform:translateX(100px);}
-    60%{opacity:1;-webkit-transform:translateX(-30px);}
-    80%{-webkit-transform:translateX(10px);}
-    100%{-webkit-transform:translateX(0);}
-}
-@-moz-keyframes bounceinR{
-    0%{opacity:0;-moz-transform:translateX(100px);}
-    60%{opacity:1;-moz-transform:translateX(-30px);}
-    80%{-moz-transform:translateX(10px);}
-    100%{-moz-transform:translateX(0);}
-}
-@-ms-keyframes bounceinR{
-    0%{opacity:0;-ms-transform:translateX(100px);}
-    60%{opacity:1;-ms-transform:translateX(-30px);}
-    80%{-ms-transform:translateX(10px);}
-    100%{-ms-transform:translateX(0);}
-}
-@keyframes bounceinR{
-    0%{opacity:0;transform:translateX(100px);}
-    60%{opacity:1;transform:translateX(-30px);}
-    80%{transform:translateX(10px);}
-    100%{transform:translateX(0);}
-}*/
 
 .main_content_page3_human{
 	position: relative;
@@ -599,7 +547,6 @@
 	background-color: #fff;
 	opacity: .2;
 	width: 100%;
-	/*top:  0;*/
 	height: 96%;
 }
 .main_content_page3_right_content_main{
@@ -683,79 +630,6 @@
 
 
 /* 邓 */
-/*第四页动画*/
-/*.rowFour .logo_box img{
-	opacity: 0;
-	transition: All 3s ease-in-out;
-    -webkit-transition: All 3s ease-in-out;
-    -moz-transition: All 3s ease-in-out;
-    -o-transition: All 3s ease-in-out;
-}
-.rowFour .more_about{
-	transform: translate(200px);
-	-webkit-transform: translate(200px);
-    -moz-transform: translate(200px);
-    -o-transform: translate(200px);
-    -ms-transform: translate(200px);
-	transition: all .5s linear;
-}
-.rowFour .top_describe{
-	opacity: 0;
-	transform: translateY(50px);
-	-webkit-transform: translateY(50px);
-    -moz-transform: translateY(50px);
-    -o-transform: translateY(50px);
-    -ms-transform: translateY(50px);
-    transition: all 3s; 
-}
-.rowFour .ci_contain_center{
-	opacity: 0;
-	transition: all 3s; 
-}
-.activeTwo .logo_box img{
-	opacity: 1;
-	transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-}
-.activeTwo .more_about{
-	transform: translate(0);
-	-webkit-transform: translate(0);
-    -moz-transform: translate(0);
-    -o-transform: translate(0);
-    -ms-transform: translate(0);
-	transition: all 3s;
-}
-.activeTwo .top_describe{
-	opacity: 1;
-	transform: translateY(0);
-	-webkit-transform: translateY(0);
-    -moz-transform: translateY(0);
-    -o-transform: translateY(0);
-    -ms-transform: translateY(0);
-}
-.activeTwo .ci_contain_center{
-	opacity: 1;
-	animation: fadeinL 3s ease-in-out;
-}
- @-webkit-keyframes fadeinL{
-    0%{opacity:0;-webkit-transform:translateX(-100px);}
-    100%{opacity:1;-webkit-transform:translateX(0);}
-}
-@-moz-keyframes fadeinL{
-    0%{opacity:0;-moz-transform:translateX(-100px);}
-    100%{opacity:1;-moz-transform:translateX(0);}
-}
-@-ms-keyframes fadeinL{
-    0%{opacity:0;-ms-transform:translateX(-100px);}
-    100%{opacity:1;-ms-transform:translateX(0);}
-}
-@keyframes fadeinL{
-    0%{opacity:0;transform:translateX(-100px);}
-    100%{opacity:1;transform:translateX(0);}
-}*/
 
 .company_infor{
 	width: 100%;
@@ -845,15 +719,6 @@
 	cursor: pointer;
 	position: relative;
 }
-/*@keyframes fiveShow{
-    0%{transform:scale(1);}
-    50%{transform:scale(1.1);}
-    100%{transform:scale(1);}
-}*/
-
-.activeFive{
-	animation: fiveShow 2s linear;
-}
 
 
 
@@ -869,5 +734,9 @@
 .rightNav_txt_fade-enter, .rightNav_txt_fade-leave-to{
 	opacity: 0;
 	transform: translateX(-20px);
+	-ms-transform:translateX(-20px);	/* IE 9 */
+	-moz-transform:translateX(-20px); 	/* Firefox */
+	-webkit-transform:translateX(-20px); /* Safari 和 Chrome */
+	-o-transform:translateX(-20px); 	/* Opera */
 }
 </style>

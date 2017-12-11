@@ -84,9 +84,6 @@ export default {
 	        }
 	        
       	},
-		getNewsService() {
-			console.log("分页获取新闻资讯");
-		},
 		previousPage() {
 			if(this.searchModel.currentPage == 1){
 				return;
@@ -262,6 +259,24 @@ export default {
 			})
 
 			this.hasShown.thirdTxt = true
+		},
+
+		searchNews() {
+			this.$axios.get('news/selectAll', {
+				params: this.searchModel
+			})
+			.then((res)=>{
+				console.log(res)
+				if(res.data.code === 0){
+					// this.objects = res.data.data.list;
+					this.searchModel.total = res.data.data.total
+				}else{
+					this.$toast(res.data.msg)
+				}
+			})
+			.catch((err)=>{
+				this.$toast("请求超时了请检查网络")
+			})
 		}
 	},
 	mounted() {
@@ -272,7 +287,6 @@ export default {
 		window.onresize = ()=>{
 			this.clientWidth = `${document.body.clientWidth}`;
 		}
-		this.getNewsService();
 		this.newsMainBefore();
 		window.addEventListener('scroll', this.menu);
 
