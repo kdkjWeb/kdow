@@ -15,20 +15,20 @@ export default{
                 ChineseTitle: '热门产品',
                 EnglishTitle: 'HOT PRODUCTS',
                 product: [[{
-                    src: '../../../static/images/hot-product1.png',
+                    src: '../../../static/images/hot-product1.jpg',
                     title: '产品名称',
                     date: '2017-11-17',
                     author: '不知道',
                     description: '一款很好用很好用的软件，不骗你你哦！一款很好用很好用的软件，不骗你你哦！一款很好用很好用的软件，不骗你你哦！一款很好用很好用的软件，不骗你你哦！'
                 },{
-                    src: '../../../static/images/hot-product2.png',
+                    src: '../../../static/images/hot-product2.jpg',
                     title: '产品名称',
                     date: '2017-11-17',
                     author: '不知道',
                     description: '一款很好用很好用的软件，不骗你你哦！一款很好用很好用的软件，不骗你你哦！'
                 }],[
                     {
-                    src: '../../../static/images/hot-product3.png',
+                    src: '../../../static/images/hot-product3.jpg',
                     title: '产品名称',
                     date: '2017-11-17',
                     author: '不知道',
@@ -47,74 +47,74 @@ export default{
                 name: 'PC端',
                 iconClass: 'icon-diannao'}],
                 product: [[{
-                src: '../../../static/images/allProduct.png',
+                src: '../../../static/images/allProduct.jpg',
                 title: '产品名称',
                 date: '2017-11-17',
                 author: '不知道',
                 description: '一款很好用很好用的软件，不骗你你哦！一款很好用很好用的软件，不骗你你哦！一款很好用很好用的软件，不骗你你哦！一款很好用很好用的软件，不骗你你哦！'
             },{
-                src: '../../../static/images/allProduct.png',
+                src: '../../../static/images/allProduct.jpg',
                 title: '产品名称',
                 date: '2017-11-17',
                 author: '不知道',
                 description: '一款很好用很好用的软件，不骗你你哦！一款很好用很好用的软件，不骗你你哦！'
             },{
-                src: '../../../static/images/allProduct.png',
+                src: '../../../static/images/allProduct.jpg',
                 title: '产品名称',
                 date: '2017-11-17',
                 author: '不知道',
                 description: '一款很好用很好用的软件，不骗你你哦！一款很好用很好用的软件，不骗你你哦！'
             },{
-                src: '../../../static/images/allProduct.png',
+                src: '../../../static/images/allProduct.jpg',
                 title: '产品名称',
                 date: '2017-11-17',
                 author: '不知道',
                 description: '一款很好用很好用的软件，不骗你你哦！一款很好用很好用的软件，不骗你你哦！'
             },{
-                src: '../../../static/images/allProduct.png',
+                src: '../../../static/images/allProduct.jpg',
                 title: '产品名称',
                 date: '2017-11-17',
                 author: '不知道',
                 description: '一款很好用很好用的软件，不骗你你哦！一款很好用很好用的软件，不骗你你哦！'
             },{
-                src: '../../../static/images/allProduct.png',
+                src: '../../../static/images/allProduct.jpg',
                 title: '产品名称',
                 date: '2017-11-17',
                 author: '不知道',
                 description: '一款很好用很好用的软件，不骗你你哦！一款很好用很好用的软件，不骗你你哦！'
             }],[
                 {
-                src: '../../../static/images/allProduct.png',
+                src: '../../../static/images/allProduct.jpg',
                 title: '产品名称',
                 date: '2017-11-17',
                 author: '手机端',
                 description: '一款很好用很好用的软件，不骗你你哦！一款很好用很好用的软件，不骗你你哦！一款很好用很好用的软件，不骗你你哦！一款很好用很好用的软件，不骗你你哦！'
             },{
-                src: '../../../static/images/allProduct.png',
+                src: '../../../static/images/allProduct.jpg',
                 title: '产品名称',
                 date: '2017-11-17',
                 author: '手机端',
                 description: '一款很好用很好用的软件，不骗你你哦！一款很好用很好用的软件，不骗你你哦！'
             },{
-                src: '../../../static/images/allProduct.png',
+                src: '../../../static/images/allProduct.jpg',
                 title: '产品名称',
                 date: '2017-11-17',
                 author: '不知道',
                 description: '一款很好用很好用的软件，不骗你你哦！一款很好用很好用的软件，不骗你你哦！'
             },{
-                src: '../../../static/images/allProduct.png',
+                src: '../../../static/images/allProduct.jpg',
                 title: '产品名称',
                 date: '2017-11-17',
                 author: '不知道',
                 description: '一款很好用很好用的软件，不骗你你哦！一款很好用很好用的软件，不骗你你哦！'
             },{
-                src: '../../../static/images/allProduct.png',
+                src: '../../../static/images/allProduct.jpg',
                 title: '产品名称',
                 date: '2017-11-17',
                 author: '不知道',
                 description: '一款很好用很好用的软件，不骗你你哦！一款很好用很好用的软件，不骗你你哦！'
             },{
-                src: '../../../static/images/allProduct.png',
+                src: '../../../static/images/allProduct.jpg',
                 title: '产品名称',
                 date: '2017-11-17',
                 author: '不知道',

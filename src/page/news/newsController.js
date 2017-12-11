@@ -23,38 +23,38 @@ export default {
 				title: "【方式的转变】害怕阅读的人。一跟他们谈话，我就像一个透明人",
 				description: '无论什么时代，最大的"风波"还是自己，用阅读和经历，成就知识和智慧',
 				comments: '阅读到悦读',
-				imgUrl: '/static/news/news_btm1.png'
+				imgUrl: '/static/news/news_btm1.jpg'
 			},{
 				title: "【方式的转变】害怕阅读的人。一跟他们谈话，我就像一个透明人",
 				description: '无论什么时代，最大的"风波"还是自己，用阅读和经历，成就知识和智慧',
 				comments: '阅读到悦读',
-				imgUrl: '/static/news/news_btm2.png'
+				imgUrl: '/static/news/news_btm2.jpg'
 			},{
 				title: "【方式的转变】害怕阅读的人。一跟他们谈话，我就像一个透明人",
 				description: '无论什么时代，最大的"风波"还是自己，用阅读和经历，成就知识和智慧',
 				comments: '阅读到悦读',
-				imgUrl: '/static/news/news_btm3.png'
+				imgUrl: '/static/news/news_btm3.jpg'
 			}],
 			newsMain: [{
 				title: "【方式的转变】害怕阅读的人。一跟他们谈话，我就像一个透明人，一跟他们谈话，我就像一个透明人",
 				description: '无论什么时代，最大的"风波"还是自己，用阅读和经历，成就知识和智慧，最大的"风波"还是自己，用阅读和经历，成就知识和智慧',
 				comments: '阅读到悦读',
-				imgUrl: '/static/news/1.png'
+				imgUrl: '/static/news/1.jpg'
 			},{
 				title: "【方式的转变】害怕阅读的人。一跟他们谈话，我就像一个透明人，一跟他们谈话，我就像一个透明人",
 				description: '无论什么时代，最大的"风波"还是自己，用阅读和经历，成就知识和智慧，最大的"风波"还是自己，用阅读和经历，成就知识和智慧',
 				comments: '阅读到悦读',
-				imgUrl: '/static/news/2.png'
+				imgUrl: '/static/news/2.jpg'
 			},{
 				title: "【方式的转变】害怕阅读的人。一跟他们谈话，我就像一个透明人，一跟他们谈话，我就像一个透明人",
 				description: '无论什么时代，最大的"风波"还是自己，用阅读和经历，成就知识和智慧，最大的"风波"还是自己，用阅读和经历，成就知识和智慧',
 				comments: '阅读到悦读',
-				imgUrl: '/static/news/3.png'
+				imgUrl: '/static/news/3.jpg'
 			},{
 				title: "【方式的转变】害怕阅读的人。一跟他们谈话，我就像一个透明人，一跟他们谈话，我就像一个透明人",
 				description: '无论什么时代，最大的"风波"还是自己，用阅读和经历，成就知识和智慧，最大的"风波"还是自己，用阅读和经历，成就知识和智慧',
 				comments: '阅读到悦读',
-				imgUrl: '/static/news/4.png'
+				imgUrl: '/static/news/4.jpg'
 			}]
 		}
 	},

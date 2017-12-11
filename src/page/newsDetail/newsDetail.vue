@@ -65,7 +65,7 @@
 		<div class="newsDetail_banner container-fluid noPadding">
 			<div class="row">
 				<div class="col-md-12 col-sm-12 col-xs-12 noPadding">
-					<img src="/static/news_detail/banner.png"
+					<img src="/static/news_detail/banner.jpg"
 					     width="100%" alt=""/>
 				</div>
 			</div>

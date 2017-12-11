@@ -16,7 +16,7 @@
 
 		<div class="container-fluid noPadding" ref="news_banner"> 
 			<div class="col-md-12 col-sm-12 col-xs-12 noPadding">
-				<img src="../../assets/news_banner.png"
+				<img src="../../../static/news/news_banner.jpg"
 				     width="100%" alt=""/>
 			</div>
 		</div>

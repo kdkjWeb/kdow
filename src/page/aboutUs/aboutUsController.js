@@ -13,7 +13,7 @@ export default{
             scroll: '',
             topH: '',
             banner: {
-                src: '../../../static/images/about-banner.png',
+                src: '../../../static/images/about-banner1.jpg',
                 href: 'http://www.baidu.com',
                 title: '恺缔科技有限公司',
                 alt: '这是一张banner图'
@@ -25,7 +25,7 @@ export default{
                 EnglishIntroduce:'K.D.Sci.&Tech.    we are not just a software company, but also a healthy, good,dynamicTechnology companies. We are committed to the software or other science and technology industries, and to achieve the diversification of content. public Secretary adhering to the "sustainable development, steady development,leading technology, people-oriented" concept, through the full and adequate resourcesConcession members to share an Internet + feast of the times!'
             },
             CompanyRight: {
-                src: '../../../static/images/aboutus-company.png'
+                src: '../../../static/images/aboutus-company.jpg'
             },
             service: {
                 ServiceTitle: '全新服务体验',
@@ -56,23 +56,23 @@ export default{
                 ChineseTitle: '我们的团队',
                 EnglishTitle: 'OUR TEAM',
                 OurTeam: [{
-                    src: '../../../static/images/our-1.png',
+                    src: '../../../static/images/our-1.jpg',
                     title: '我们的第一个成员',
                     alt: '我们的第一个成员'
                 },{
-                    src: '../../../static/images/our-2.png',
+                    src: '../../../static/images/our-2.jpg',
                     title: '我们的第二个成员',
                     alt: '我们的第二个成员'
                 },{
-                    src: '../../../static/images/our-3.png',
+                    src: '../../../static/images/our-3.jpg',
                     title: '我们的第三个成员',
                     alt: '我们的第三个成员'
                 },{
-                    src: '../../../static/images/our-4.png',
+                    src: '../../../static/images/our-4.jpg',
                     title: '我们的第四个成员',
                     alt: '我们的第四个成员'
                 },{
-                    src: '../../../static/images/our-5.png',
+                    src: '../../../static/images/our-5.jpg',
                     title: '我们的第五个成员',
                     alt: '我们的第五个成员'
                 }]

@@ -70,7 +70,7 @@ img{
 
 .center-top{
     padding: 150px 0 0;
-    background-image: url(../../../static/images/center-banner.png);
+    background-image: url(../../../static/images/center-banner.jpg);
     background-position: center center;
     background-size: cover;
 }

@@ -251,7 +251,7 @@ img{
 .service{
 /*    position: relative;*/
     height: 352px;
-    background: url(/static/images/service-bg.png) fixed;
+    background: url(/static/images/service-bg.jpg) fixed;
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: cover;
