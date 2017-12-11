@@ -6,7 +6,7 @@ export default{
             showLoginDialog:false,
             iconColor: 0,
             banner: {
-                src: '../../../static/images/about-banner.jpg',
+                src: '../static/images/about-banner.jpg',
                 href: 'http://www.baidu.com',
                 title: '恺缔科技有限公司',
                 alt: '这是一张banner图'

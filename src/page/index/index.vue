@@ -344,7 +344,7 @@
 }
 
 .main{
-	background: url("/static/index/1/main_bg.jpg") no-repeat 100% 100%;
+	background: url("../../assets/main_bg.jpg") no-repeat 100% 100%;
 	overflow: auto !important;
 }
 .main_shadow{
