@@ -277,6 +277,9 @@ export default {
 			.catch((err)=>{
 				this.$toast("请求超时了请检查网络")
 			})
+		},
+		getNewsService() {
+			console.log('获取分页信息')
 		}
 	},
 	mounted() {
