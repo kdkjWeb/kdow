@@ -143,6 +143,9 @@ export default{
                 //this.$refs.serviceImg.style.marginTop=this.topH-this.scroll+'px';
             }
            // console.log(this.scroll)
+        },
+        getNewsService() {
+            console.log('获取翻页信息')
         }
      },
      mounted() {
